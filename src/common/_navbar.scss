@@ -1,0 +1,60 @@
+.nav {
+    margin: 0.75rem auto;
+    display: flex;
+    align-items: center;
+
+    & > * {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-family: 'ProximaNovaBold';
+        font-size: 3.25rem;
+        text-align: center;
+    }
+
+    &__box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__box > span {
+        cursor: pointer;
+        transition: all .2s;
+        border-bottom: .2rem solid transparent;
+    }
+
+    &__box > span:hover {
+        border-bottom: .2rem solid $color-grey-dark-2;
+    }
+
+    &__title > span:hover {
+        transform: scale(1.05);
+    }
+
+    &__box:first-child > span { 
+        margin-left: 1.5rem;
+    }
+
+    &__box:first-child > span:first-child {
+        margin-left: 2.25rem;
+    }
+
+    &__box:first-child > span:last-child {
+        margin-right: auto;
+    }
+
+    &__box:last-child > span { 
+        margin-right: 1.5rem;
+    }
+
+    &__box:last-child > span:last-child { 
+        margin-right: 2.25rem;
+    }
+
+    &__box:last-child > span:first-child {
+        margin-left: auto;
+    }
+}

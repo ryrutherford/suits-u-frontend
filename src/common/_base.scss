@@ -1,0 +1,67 @@
+// COLOR VARIABLES
+$color-primary: #00b0c8;
+$color-primary-light: #61dcec;
+$color-primary-dark: #1793a3;
+
+$color-secondary: #c69963;
+
+$color-white: #ffffff;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #302c29;
+$color-grey-dark-2: #3d3429;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px;
+$bp-small: 37.5em;    // 600px;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+}
+
+@font-face {
+    font-family: 'ProximaNovaReg';
+    src: url(./fonts/Proxima-Nova-Reg.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'ProximaNovaRegIt';
+    src: url(./fonts/Proxima-Nova-Reg-It.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'ProximaNovaLight';
+    src: url(./fonts/Proxima-Nova-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url(./fonts/Proxima-Nova-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'ProximaNovaBlack';
+    src: url(./fonts/Proxima-Nova-Black.otf) format('opentype');
+}
+
+body {
+    font-family: 'ProximaNovaReg';
+    color: $color-grey-dark-2;
+    line-height: 1.6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
