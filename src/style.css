@@ -7,7 +7,8 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  min-height: 100%; }
 
 @font-face {
   font-family: 'ProximaNovaReg';
@@ -35,12 +36,23 @@ body {
   line-height: 1.6;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: relative;
+  margin-bottom: 11rem; }
+
+.link, .link:link, .link:visited {
+  text-decoration: none;
+  color: currentColor; }
 
 .nav {
-  margin: 0.75rem auto;
+  position: fixed;
+  margin: 0 auto 0.75rem auto;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 6rem;
+  z-index: 100; }
   .nav > * {
     font-size: 1.4rem;
     text-transform: uppercase; }
@@ -59,7 +71,8 @@ body {
   .nav__box > span:hover {
     border-bottom: 0.2rem solid #3d3429; }
   .nav__title > span:hover {
-    transform: scale(1.05); }
+    transform: scale(1.05);
+    border-bottom: .2rem solid transparent; }
   .nav__box:first-child > span {
     margin-left: 1.5rem; }
   .nav__box:first-child > span:first-child {
@@ -72,3 +85,176 @@ body {
     margin-right: 2.25rem; }
   .nav__box:last-child > span:first-child {
     margin-left: auto; }
+
+.footer {
+  background-color: #eee;
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 11rem; }
+  .footer__flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .footer__icon {
+    fill: #3d3429;
+    height: 3rem;
+    width: 3rem;
+    margin-top: 2rem; }
+  .footer__img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 8%;
+    margin-top: 2rem; }
+  .footer__copy {
+    margin: 2rem; }
+
+.recent-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2rem auto 2rem auto; }
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 1rem 2rem 1rem; }
+  .product-card__img {
+    height: auto;
+    width: auto;
+    max-width: 18rem;
+    max-height: 26rem; }
+  .product-card__brand {
+    font-family: 'ProximaNovaBold';
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .product-card__description {
+    font-size: 1.25rem; }
+  .product-card__size {
+    font-family: "ProximaNovaLight";
+    font-size: 1.15rem;
+    text-transform: uppercase; }
+
+.home__details {
+  font-family: "ProximaNovaLight";
+  margin-top: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3.5rem; }
+
+.section-video {
+  height: 65vh;
+  padding-top: 6rem; }
+
+.video {
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.history {
+  padding-top: 8rem;
+  font-family: "ProximaNovaLight"; }
+  .history__overview--text {
+    margin: 0 auto 3rem auto;
+    width: 65%;
+    font-size: 1.75rem;
+    text-align: center; }
+  .history__timeline {
+    position: relative;
+    margin: 0 auto;
+    max-width: 80%;
+    padding-bottom: 3rem;
+    /* Place the container to the left */
+    /* Place the container to the right */
+    /* The actual content */
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    /*
+        & > p:not(:last-child){
+            margin-bottom: 1.2rem;
+        }
+
+        &--year {
+            font-family: "ProximaNovaBold";
+            font-size: 2rem;
+        }
+        &--text {
+            font-size: 1.5rem;
+        }*/ }
+    .history__timeline::after {
+      content: '';
+      position: absolute;
+      width: .6rem;
+      background-color: #00b0c8;
+      top: 1.9rem;
+      bottom: 21.2rem;
+      left: 50%;
+      margin-left: -.3rem;
+      box-shadow: 0.2rem 0.2rem 1rem rgba(48, 44, 41, 0.2); }
+    .history__timeline-container {
+      padding: 1rem 4rem;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      /* The circles on the timeline */ }
+      .history__timeline-container::after {
+        content: '';
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        right: -0.5rem;
+        background-color: #f9f7f6;
+        border: 0.4rem solid #00b0c8;
+        top: 1.5rem;
+        border-radius: 50%;
+        z-index: 1; }
+    .history__timeline--left {
+      left: 0; }
+    .history__timeline--right {
+      left: 50%;
+      /* Fix the circle for containers on the right side */ }
+      .history__timeline--right::after {
+        left: -0.5rem; }
+    .history__timeline-content {
+      padding: 2rem 3rem;
+      background-color: #f9f7f6;
+      position: relative;
+      border-radius: .6rem;
+      box-shadow: 0.5rem 0.5rem 1rem rgba(48, 44, 41, 0.2);
+      transition: all .2s; }
+      .history__timeline-content > h2 {
+        font-size: 2.25rem; }
+      .history__timeline-content > p {
+        font-size: 1.5rem; }
+      .history__timeline-content:hover {
+        transform: scale(1.05);
+        box-shadow: 0.7rem 0.7rem 1rem rgba(48, 44, 41, 0.2); }
+    @media screen and (max-width: 600px) {
+      .history__timeline {
+        /* Place the timelime to the left */
+        /* Full-width containers */
+        /* Make sure all circles are at the same spot */
+        /* Make all right containers behave like the left ones */ }
+        .history__timeline::after {
+          left: 3.1rem;
+          bottom: 20rem; }
+        .history__timeline-container {
+          width: 100%;
+          padding-left: 7rem;
+          padding-right: 2.5rem; }
+        .history__timeline--left::after, .history__timeline--right::after {
+          left: 1.8rem; }
+        .history__timeline--right {
+          left: 0%; }
+        .history__timeline-content > h2 {
+          font-size: 2rem; }
+        .history__timeline-content > p {
+          font-size: 1.25rem; } }

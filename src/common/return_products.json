@@ -1,0 +1,80 @@
+{
+    "image": [
+        {
+        "formats": {
+            "thumbnail": {
+            "name": "thumbnail_paul-smith-brown-satin-soho-suit.jpg",
+            "hash": "thumbnail_paul_smith_brown_satin_soho_suit_98f014ff58",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 43,
+            "height": 156,
+            "size": 2.27,
+            "path": null,
+            "url": "https://res.cloudinary.com/dm3xhw9yo/image/upload/v1602803602/thumbnail_paul_smith_brown_satin_soho_suit_98f014ff58.jpg",
+            "provider_metadata": {
+                "public_id": "thumbnail_paul_smith_brown_satin_soho_suit_98f014ff58",
+                "resource_type": "image"
+            }
+            },
+            "large": {
+            "name": "large_paul-smith-brown-satin-soho-suit.jpg",
+            "hash": "large_paul_smith_brown_satin_soho_suit_98f014ff58",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 273,
+            "height": 1000,
+            "size": 28.11,
+            "path": null,
+            "url": "https://res.cloudinary.com/dm3xhw9yo/image/upload/v1602803603/large_paul_smith_brown_satin_soho_suit_98f014ff58.jpg",
+            "provider_metadata": {
+                "public_id": "large_paul_smith_brown_satin_soho_suit_98f014ff58",
+                "resource_type": "image"
+            }
+            },
+            "medium": {
+            "name": "medium_paul-smith-brown-satin-soho-suit.jpg",
+            "hash": "medium_paul_smith_brown_satin_soho_suit_98f014ff58",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 205,
+            "height": 750,
+            "size": 18.84,
+            "path": null,
+            "url": "https://res.cloudinary.com/dm3xhw9yo/image/upload/v1602803604/medium_paul_smith_brown_satin_soho_suit_98f014ff58.jpg",
+            "provider_metadata": {
+                "public_id": "medium_paul_smith_brown_satin_soho_suit_98f014ff58",
+                "resource_type": "image"
+            }
+            },
+            "small": {
+            "name": "small_paul-smith-brown-satin-soho-suit.jpg",
+            "hash": "small_paul_smith_brown_satin_soho_suit_98f014ff58",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 136,
+            "height": 500,
+            "size": 10.52,
+            "path": null,
+            "url": "https://res.cloudinary.com/dm3xhw9yo/image/upload/v1602803604/small_paul_smith_brown_satin_soho_suit_98f014ff58.jpg",
+            "provider_metadata": {
+                "public_id": "small_paul_smith_brown_satin_soho_suit_98f014ff58",
+                "resource_type": "image"
+            }
+            }
+        }
+        }
+    ],
+    "price": 2295,
+    "quantity": 1,
+    "description": "Brown Satin Soho Suit",
+    "brand": "Paul Smith",
+    "gender": "Men",
+    "reservedBy": "NONE",
+    "category": {
+        "name": "Suits & Blazers"
+    },
+    "size": {
+        "size": "SUIT US 38 = S"
+    }
+}

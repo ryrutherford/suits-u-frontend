@@ -1,28 +1,29 @@
 import React from "react"
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
     return(
         <div className="nav">
             <div className="nav__box">
                 <span>
-                    Men
+                    <Link to="/men" className="link">Men</Link>
                 </span>
                 <span>
-                    Women
+                    <Link to="/women" className="link">Women</Link>
                 </span>
                 <span>
-                    Account
+                    <Link to="/account" className="link">Account</Link>
                 </span>
             </div>
             <div className="nav__box nav__title">
-                <span>Suits U Montreal</span>
+                <span><Link to="/" className="link">Suits U Montreal</Link></span>
             </div>
             <div className="nav__box">
                 <span>
-                    History
+                    <Link to="/history" className="link">History</Link>
                 </span>
                 <span>
-                    Team
+                    <Link to="/team" className="link">Team</Link>
                 </span>
             </div>
         </div>

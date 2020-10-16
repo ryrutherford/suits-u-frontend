@@ -1,0 +1,33 @@
+.footer {
+    background-color: #eee;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 11rem; //update in media queries
+
+    &__flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    &__icon {
+        fill: $color-grey-dark-2;
+        height: 3rem;
+        width: 3rem;
+        margin-top: 2rem;
+    }
+
+    &__img {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 8%;
+        margin-top: 2rem;
+    }
+
+    &__copy {
+        margin: 2rem;
+    }
+}

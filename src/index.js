@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ApolloProvider } from "react-apollo";
+import { ApolloProvider } from "@apollo/react-hooks"//"react-apollo";
 import App from "./containers/App";
 import client from "./utils/ApolloClient";
 import { BrowserRouter as Router } from "react-router-dom";
