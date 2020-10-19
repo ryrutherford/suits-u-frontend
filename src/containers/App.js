@@ -5,6 +5,7 @@ import Footer from '../common/Footer';
 import Home from '../home/Home';
 import Team from "../team/Team";
 import History from "../history/History";
+import Authenticate from "../account/Authenticate";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact path="/" component={Home}/>
         <Route path="/history" component={History}/>
         <Route path="/team" component={Team}/>
+        <Route path="/authenticate" component={Authenticate}/>
       </Switch>
       <Footer/>
     </div>
