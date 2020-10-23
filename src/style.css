@@ -304,8 +304,10 @@ body {
 .authenticate {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: flex-start;
-  padding-top: 8rem; }
+  padding-top: 8rem;
+  padding-bottom: 3rem; }
   .authenticate__form {
     display: flex;
     flex-direction: column;
@@ -354,3 +356,8 @@ body {
 .button--black {
   color: #ffffff;
   background-color: #302c29; }
+
+.auth-error {
+  color: #ff0033;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem; }

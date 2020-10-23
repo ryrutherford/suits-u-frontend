@@ -6,6 +6,7 @@ import GET_PRODUCTS from "../queries/GetProducts";
 
 
 const Home = () => {
+
     return(
         <section>
             <Video/>
@@ -15,7 +16,7 @@ const Home = () => {
             <Query query={GET_PRODUCTS} reservedBy="NONE" categoryName="Suits & Blazers">
                 {({data: {products}}) => { return (
                     <section className="recent-products">
-                            {products.map((product, i) => {
+                            {products.slice(0,4).map((product, i) => {
                                 return (
                                     <ProductCard product={product} key={i}/>
                                 );

@@ -5,6 +5,7 @@ import Footer from '../common/Footer';
 import Home from '../home/Home';
 import Team from "../team/Team";
 import History from "../history/History";
+import Account from "../account/Account";
 import Authenticate from "../account/Authenticate";
 
 const App = () => {
@@ -13,9 +14,10 @@ const App = () => {
       <Navbar/>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/history" component={History}/>
-        <Route path="/team" component={Team}/>
-        <Route path="/authenticate" component={Authenticate}/>
+        <Route exact path="/history" component={History}/>
+        <Route exact path="/team" component={Team}/>
+        <Route exact path="/authenticate" component={Authenticate}/>
+        <Route exact path="/account" component={Account}/>
       </Switch>
       <Footer/>
     </div>
