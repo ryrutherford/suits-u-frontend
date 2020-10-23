@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import Cookies from "universal-cookie";
-import {withRouter} from "react-router-dom";
 
-const Register = ({history}) => {
+const Register = ({setCEM}) => {
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -24,10 +22,7 @@ const Register = ({history}) => {
                 } 
             })
             .then((response) => {
-                const {id} = response.data.user;
-                const cookies = new Cookies();
-                cookies.set("userID", id, {path: '/', maxAge: 15*86400}); //set cookie for 15 days
-                history.push("/");
+                setCEM("Account registration successful, please confirm your email before logging in");
             })
             .catch((error) => {
                 // Handle error.
@@ -53,7 +48,7 @@ const Register = ({history}) => {
             </div>
             <div className="authenticate__form-group">
                 <label htmlFor="regPassword" className="authenticate__form-label">Password</label>
-                <input type="password" className="authenticate__form-input" id="regPassword" value={password} onChange={(event) => setPassword(event.target.value)} required/>
+                <input type="password" className="authenticate__form-input" id="regPassword" value={password} onChange={(event) => setPassword(event.target.value)} required autoComplete="new-password"/>
             </div>
             <span className="auth-error">{error}</span>
             <div className="authenticate__form-group">
@@ -63,4 +58,4 @@ const Register = ({history}) => {
     );
 }
 
-export default withRouter(Register);
+export default Register;

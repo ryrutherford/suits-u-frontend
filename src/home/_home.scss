@@ -1,7 +1,10 @@
-.home__details {
-    font-family: "ProximaNovaLight";
-    margin-top: 3.5rem;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 3.5rem;
+.home {
+    &__details {
+        margin: 3.5rem auto 0 auto;
+        font-family: "ProximaNovaLight";
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 3.5rem;
+        max-width: 90%
+    }
 }

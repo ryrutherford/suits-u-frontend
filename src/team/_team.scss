@@ -4,7 +4,8 @@
     //3 columns
     grid-template-columns: repeat(3, 1fr);
     //12 rows (the header rows are 1fr, info rows are 12fr
-    grid-template-rows: 4.5rem 5fr 4.5rem 5fr 4.5rem 5fr 4.5rem 5fr 4.5rem 5fr 4.5rem 5fr; 
+    //media query to change frs when there is a phone
+    grid-template-rows: 4.5rem 1fr 4.5rem 1fr 4.5rem 1fr 4.5rem 1fr 4.5rem 1fr 4.5rem 1fr; 
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     width: 80%;
@@ -25,6 +26,7 @@
 
         &-member {
             max-width: 25rem;
+            margin-bottom: 2rem;
             margin-left: 2rem;
             margin-right: 2rem;
             transition: all .2s;

@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookies from 'universal-cookie';
 import {withRouter} from "react-router-dom";
 
-const Login = ({history}) => {
+const Login = ({history, setForgotPassword}) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -47,8 +47,9 @@ const Login = ({history}) => {
             </div>
             <div className="authenticate__form-group">
                 <label htmlFor="loginPassword" className="authenticate__form-label">Password</label>
-                <input type="password" className="authenticate__form-input" id="loginPassword" value={password} onChange={(event) => setPassword(event.target.value)} required/>
+                <input type="password" className="authenticate__form-input" id="loginPassword" value={password} onChange={(event) => setPassword(event.target.value)} required autoComplete="current-password"/>
             </div>
+            <span className="authenticate__forgot-password" onClick={() => setForgotPassword('Forgot Password')}>Forgot Password?</span>
             <span className="auth-error">{error}</span>
             <div className="authenticate__form-group">
                 <button className="button button--black">login</button>
