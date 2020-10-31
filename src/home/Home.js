@@ -13,7 +13,7 @@ const Home = () => {
             <div className="home__details">
                 Look good. Feel good.
             </div>
-            <Query query={GET_PRODUCTS} reservedBy="NONE">
+            <Query query={GET_PRODUCTS} reservedBy="NONE" numProducts={4}>
                 {({data: {products}}) => { return (
                     <section className="recent-products">
                             {products.slice(0,4).map((product, i) => {

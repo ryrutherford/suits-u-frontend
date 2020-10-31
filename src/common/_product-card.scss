@@ -20,6 +20,7 @@
         width: auto;
         max-width: 18rem;
         max-height: 26rem;
+        margin: 0 auto;
     }
 
     &__brand {
@@ -35,6 +36,12 @@
     &__size {
         font-family: "ProximaNovaLight";
         font-size: 1.15rem;
+        text-transform: uppercase;
+    }
+
+    &__price {
+        font-family: "ProximaNovaLight";
+        font-size: 1.05rem;
         text-transform: uppercase;
     }
 }

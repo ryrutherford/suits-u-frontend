@@ -137,7 +137,8 @@ body {
     height: auto;
     width: auto;
     max-width: 18rem;
-    max-height: 26rem; }
+    max-height: 26rem;
+    margin: 0 auto; }
   .product-card__brand {
     font-family: 'ProximaNovaBold';
     font-size: 1.4rem;
@@ -147,6 +148,10 @@ body {
   .product-card__size {
     font-family: "ProximaNovaLight";
     font-size: 1.15rem;
+    text-transform: uppercase; }
+  .product-card__price {
+    font-family: "ProximaNovaLight";
+    font-size: 1.05rem;
     text-transform: uppercase; }
 
 .home__details {
@@ -295,10 +300,11 @@ body {
       margin-right: 2rem;
       transition: all .2s; }
       .team__members-member > img {
-        height: auto;
-        width: auto;
+        height: 100%;
+        width: 100%;
         max-width: 25rem;
         max-height: 32rem;
+        object-fit: cover;
         filter: grayscale(65%);
         border-radius: 5%;
         box-shadow: 0.5rem 0.5rem 1rem rgba(48, 44, 41, 0.2);
@@ -396,3 +402,36 @@ body {
   text-align: center;
   text-transform: uppercase;
   display: block; }
+
+.product-page {
+  padding-top: 8rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr; }
+  .product-page__products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+  .product-page__categories {
+    display: flex;
+    flex-direction: row; }
+  .product-page__filters {
+    display: flex;
+    flex-direction: row-reverse; }
+  .product-page__ul {
+    list-style-type: none;
+    text-transform: uppercase; }
+    .product-page__ul--li-clickable {
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: all .2s;
+      border-bottom: .2rem solid transparent; }
+      .product-page__ul--li-clickable:hover {
+        border-bottom: 0.2rem solid #3d3429; }
+    .product-page__ul--title {
+      font-family: "ProximaNovaBold";
+      font-size: 1.25rem; }

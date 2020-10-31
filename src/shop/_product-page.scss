@@ -1,0 +1,48 @@
+.product-page {
+    padding-top: 8rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+
+
+    &__products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__categories {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__filters {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__ul {
+        list-style-type: none;
+        text-transform: uppercase;
+
+        &--li-clickable{
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: all .2s;
+            border-bottom: .2rem solid transparent;
+
+            &:hover {
+                border-bottom: .2rem solid $color-grey-dark-2;
+            }
+        }
+
+        &--title{
+            font-family: "ProximaNovaBold";   
+            font-size: 1.25rem;
+        }
+    }
+}

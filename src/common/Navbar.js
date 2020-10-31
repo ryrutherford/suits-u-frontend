@@ -27,10 +27,10 @@ const Navbar = ({history}) => {
         <div className="nav">
             <div className="nav__box">
                 <span>
-                    <Link to="/men" className="link">Men</Link>
+                    <Link to="/shop/men" className="link">Men</Link>
                 </span>
                 <span>
-                    <Link to="/women" className="link">Women</Link>
+                    <Link to="/shop/women" className="link">Women</Link>
                 </span>
                 <span>
                     <Link to="/account" className="link">Account</Link>

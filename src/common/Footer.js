@@ -26,14 +26,14 @@ const Footer = () => {
                             <use xlinkHref={`${svgs}#icon-linkedin`}/>
                         </svg>
                     </a>
-                    <a href="mailto:partnerships.mtl@suitsu.org" className="link" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:contact@suitsumontreal.ca" className="link">
                         <svg className="footer__icon">
                             <use xlinkHref={`${svgs}#icon-mail`}/>
                         </svg>
                     </a>
                 </div>
                 <div className="footer__copy">
-                    <Link to="/" className="link">Suits U Montreal</Link> &copy; 2020
+                    <Link to="/" className="link">Suits U Montreal</Link> &copy; {new Date().getFullYear()}
                 </div>
             </footer>
         </section>

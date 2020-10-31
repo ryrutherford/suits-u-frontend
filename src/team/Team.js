@@ -54,7 +54,7 @@ const Team = () => {
                     <p>U3 | BCom Something</p>
                 </div>
                 <div className="team__members-member">
-                    <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Sarah Wang"/>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027263/suitsu/123259673_812018182928562_848497563752829042_n_db3xkq.jpg" alt="Sarah Wang"/>
                     <h3>Sarah Wang</h3>
                     <p>Team Member Operations</p>
                     <p>U2 | BCom Something</p>
@@ -77,8 +77,8 @@ const Team = () => {
                     <p>U2 | BCom Something</p>
                 </div>
                 <div className="team__members-member">
-                    <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Margaux Koene"/>
-                    <h3>Margaux Koene</h3>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027262/suitsu/123080240_477334346516391_9038941809618046832_n_i1wgbe.jpg" alt="Margaux Koene"/>
+                    <h3>Margaux Koeune</h3>
                     <p>Team Member Marketing</p>
                     <p>U2 | BCom Something</p>
                 </div>
@@ -111,7 +111,7 @@ const Team = () => {
             </div>
             <div className="team__members">
                 <div className="team__members-member">
-                    <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Olivia Bosa"/>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027263/suitsu/123138872_359803648560364_2071865284352020965_n_tc92cv.jpg" alt="Olivia Bosa"/>
                     <h3>Olivia Bosa</h3>
                     <p>VP Finance</p>
                     <p>U2 | BCom Finance</p>

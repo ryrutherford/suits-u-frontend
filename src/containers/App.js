@@ -8,6 +8,7 @@ import History from "../history/History";
 import Account from "../account/Account";
 import Authenticate from "../account/Authenticate";
 import ResetPassword from "../account/ResetPassword";
+import ProductPage from "../shop/ProductPage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path="/authenticate" component={Authenticate}/>
         <Route exact path="/account" component={Account}/>
         <Route exact path="/reset-password" component={ResetPassword}/>
+        <Route path="/shop/:gender" component={ProductPage}/>
       </Switch>
       <Footer/>
     </div>
