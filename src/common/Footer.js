@@ -1,5 +1,5 @@
 import React from "react";
-import MUSLogo from "../imgs/MUS_inverse.png"
+//import MUSLogo from "../imgs/MUS_inverse.png"
 import svgs from "../icomoon/sprite.svg"
 import {Link} from "react-router-dom";
 
@@ -18,9 +18,11 @@ const Footer = () => {
                             <use xlinkHref={`${svgs}#icon-instagram`}/>
                         </svg>
                     </a>
+                    {/* 
                     <a href="https://www.mus.mcgill.ca/" className="link" target="_blank" rel="noopener noreferrer">
                         <img src={MUSLogo} alt="MUS Logo" className="footer__img"/>
                     </a>
+                    */}
                     <a href="https://www.linkedin.com/company/suits-u-montreal/?viewAsMember=true" className="link" target="_blank" rel="noopener noreferrer">
                         <svg className="footer__icon">
                             <use xlinkHref={`${svgs}#icon-linkedin`}/>

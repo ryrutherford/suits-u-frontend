@@ -8,7 +8,7 @@ const Team = () => {
             </div>
             <div className="team__members">
                 <div className="team__members-member">
-                    <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Ry Rutherford"/>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1605830574/suitsu/IMG_5861_2_-min_1_mg33rn.jpg" alt="Ry Rutherford"/>
                     <h3>Ry Rutherford</h3>
                     <p>Co-President</p>
                     <p>U3 | BSc Computer Science</p>

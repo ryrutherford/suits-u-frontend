@@ -2,11 +2,14 @@ import React from "react"
 import axios from "axios";
 import Cookies from "universal-cookie";
 import {withRouter, Link} from "react-router-dom";
+import svgs from "../icomoon/sprite.svg"
 
 const Navbar = ({history}) => {
 
     const cookies = new Cookies()
     const userID = cookies.get("userID");
+    let bag = JSON.parse(localStorage.getItem("bag"))
+    const bagHasItems =  bag && bag.length !== 0 ? true : false;
 
     const handleLogout = async (event) => {
         event.preventDefault();
@@ -35,6 +38,15 @@ const Navbar = ({history}) => {
                 <span>
                     <Link to="/account" className="link">Account</Link>
                 </span>
+                {
+                    bagHasItems &&
+                    <span className="nav__cart-box">
+                        <svg className="nav__cart">
+                            <use xlinkHref={`${svgs}#shopping-bag`}/>
+                        </svg>
+                        <span className="nav__cart-number">{bag.length}</span>
+                    </span>
+                }
             </div>
             <div className="nav__box nav__title">
                 <span><Link to="/" className="link">Suits U Montreal</Link></span>

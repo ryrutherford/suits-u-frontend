@@ -4,8 +4,9 @@ const GET_PRODUCTS = gql`
   query GetProducts($categoryName: String, $gender: ENUM_PRODUCT_GENDER, $sort: String, $reservedBy: String){
     products (sort: $sort, where: {category: {name: $categoryName}, gender: $gender, reservedBy: $reservedBy}) {
       image {
-        formats
+        url
       }
+    	originalPrice
       price
       shortDescription
       longDescription
@@ -14,9 +15,10 @@ const GET_PRODUCTS = gql`
       category {
         name
       }
-      size {
+      sizes {
         size
       }
+      id
     }
   }
 `

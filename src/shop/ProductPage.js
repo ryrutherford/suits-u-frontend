@@ -3,12 +3,19 @@ import ProductCard from "../common/ProductCard";
 import Query from "../queries/Query";
 import GET_PRODUCTS from "../queries/GetProducts";
 import GET_CATEGORIES from "../queries/GetCategories";
+import {withRouter, Redirect} from "react-router-dom";
 
-const ProductPage = ({match}) => {
+const ProductPage = ({match, history}) => {
 
     const gender = match.params.gender;
-    const [category, setCategory] = useState(undefined);
+    const category = match.params.category;
+    //const [category, setCategory] = useState(undefined);
     const [sort, setSort] = useState("createdAt:desc");
+
+    if(gender !== "men" && gender !== "women"){
+        console.log(gender);
+        return <Redirect to="/"/>;
+    }
 
     const changeSorting = (event, sortingMethod) => {
         event.preventDefault();
@@ -22,17 +29,21 @@ const ProductPage = ({match}) => {
                     {({data: {products}}) => { return (
                         <section className="product-page__categories">
                             <ul className="product-page__ul">
-                                <li className="product-page__ul--title product-page__ul--li-clickable" onClick={(event) => {
-                                                event.preventDefault();
-                                                setCategory(undefined);
+                                <li className="product-page__ul--title">
+                                    Categories
+                                </li>
+                                <li className={`product-page__ul--li-clickable ${category === undefined ? "product-page__ul--li-selected" : ""}`} onClick={(event) => {
+                                                //event.preventDefault();
+                                                history.replace(`/shop/${gender}`);
                                             }}>
-                                    All Categories
+                                    All
                                 </li>
                                 {[...new Set(products.map((product, i) => {
                                         return(
-                                            <li key={i} id={product.category.name} className="product-page__ul--li-clickable" onClick={(event) => {
-                                                event.preventDefault();
-                                                setCategory(product.category.name);
+                                            <li key={i} id={product.category.name} className={`product-page__ul--li-clickable ${category === product.category.name ? "product-page__ul--li-selected" : ""}`} onClick={(event) => {
+                                                //event.preventDefault();
+                                                //setCategory(product.category.name);
+                                                history.replace(`/shop/${gender}/${product.category.name}`);
                                             }}>
                                                 <span>{product.category.name}</span>
                                             </li>
@@ -42,7 +53,7 @@ const ProductPage = ({match}) => {
                         </section>
                     );}}
                 </Query>
-                <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} numProducts={8} categoryName={category}>
+                <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} numProducts={0} categoryName={category}>
                     {({data: {products}}) => { return (
                         <section className="product-page__products">
                             {products.map((product, i) => {
@@ -58,13 +69,13 @@ const ProductPage = ({match}) => {
                         <li className="product-page__ul--title">
                             Sort
                         </li>
-                        <li className="product-page__ul--li-clickable" onClick={(event) => changeSorting(event, "createdAt:desc")}>
+                        <li className={`product-page__ul--li-clickable ${sort === "createdAt:desc" ? "product-page__ul--li-selected" : ""}`} onClick={(event) => changeSorting(event, "createdAt:desc")}>
                             Newest Arrivals
                         </li>
-                        <li className="product-page__ul--li-clickable" onClick={(event) => changeSorting(event, "price:asc")}>
+                        <li className={`product-page__ul--li-clickable ${sort === "price:asc" ? "product-page__ul--li-selected" : ""}`} onClick={(event) => changeSorting(event, "price:asc")}>
                             Price: Low-High
                         </li>
-                        <li className="product-page__ul--li-clickable" onClick={(event) => changeSorting(event, "price:desc")}>
+                        <li className={`product-page__ul--li-clickable ${sort === "price:desc" ? "product-page__ul--li-selected" : ""}`} onClick={(event) => changeSorting(event, "price:desc")}>
                             Price: High-Low
                         </li>
                     </ul>
@@ -74,4 +85,4 @@ const ProductPage = ({match}) => {
     )
 }
 
-export default ProductPage;
+export default withRouter(ProductPage);

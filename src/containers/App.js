@@ -9,6 +9,7 @@ import Account from "../account/Account";
 import Authenticate from "../account/Authenticate";
 import ResetPassword from "../account/ResetPassword";
 import ProductPage from "../shop/ProductPage";
+import ProductFull from "../shop/ProductFull";
 
 const App = () => {
   return (
@@ -21,7 +22,9 @@ const App = () => {
         <Route exact path="/authenticate" component={Authenticate}/>
         <Route exact path="/account" component={Account}/>
         <Route exact path="/reset-password" component={ResetPassword}/>
-        <Route path="/shop/:gender" component={ProductPage}/>
+        <Route exact path="/shop/:gender" component={ProductPage}/>
+        <Route exact path="/shop/:gender/:category" component={ProductPage}/>
+        <Route exact path="/product/:id" component={ProductFull}/>
       </Switch>
       <Footer/>
     </div>

@@ -44,6 +44,30 @@ body {
   text-decoration: none;
   color: currentColor; }
 
+.white-space {
+  white-space: pre-wrap; }
+
+.button {
+  width: 15rem; }
+  .button, .button:link, .button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer; }
+  .button:hover {
+    box-shadow: 0.5rem 0.5rem 1rem rgba(48, 44, 41, 0.2); }
+  .button--add {
+    margin-top: 1.5rem;
+    width: 100%; }
+  .button--black {
+    color: #ffffff;
+    background-color: #302c29; }
+
 .nav {
   position: fixed;
   margin: 0 auto 0.75rem auto;
@@ -53,6 +77,19 @@ body {
   width: 100%;
   height: 6rem;
   z-index: 100; }
+  .nav__cart {
+    width: 2rem;
+    height: 2rem;
+    fill: #302c29; }
+    .nav__cart-box {
+      position: relative; }
+    .nav__cart-number {
+      font-size: 1rem;
+      position: absolute;
+      top: .5rem;
+      left: 0;
+      min-width: 100%;
+      text-align: center; }
   .nav > * {
     font-size: 1.4rem;
     text-transform: uppercase; }
@@ -87,21 +124,21 @@ body {
     margin-left: auto; }
 
 .footer {
-  background-color: #302c29;
   text-align: center;
   position: absolute;
-  top: 100%;
+  bottom: -10rem;
   left: 0;
-  right: 0;
-  height: 11rem; }
+  right: 0; }
   .footer__flex {
+    width: 50vh;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center; }
   .footer__icon {
-    fill: #f9f7f6;
-    height: 3rem;
-    width: 3rem;
+    fill: #302c29;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-top: 2rem;
     transition: all .2s; }
     .footer__icon:hover {
@@ -115,8 +152,8 @@ body {
     .footer__img:hover {
       transform: scale(1.05); }
   .footer__copy {
-    color: #f9f7f6;
-    margin: 2rem; }
+    color: #302c29;
+    margin-top: 2rem; }
 
 .recent-products {
   display: flex;
@@ -132,13 +169,15 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
   margin: 0 2rem 2rem 2rem;
-  width: 18rem; }
+  width: 18rem;
+  cursor: pointer; }
   .product-card__img {
     height: auto;
     width: auto;
     max-width: 18rem;
     max-height: 26rem;
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: block; }
   .product-card__brand {
     font-family: 'ProximaNovaBold';
     font-size: 1.4rem;
@@ -150,9 +189,14 @@ body {
     font-size: 1.15rem;
     text-transform: uppercase; }
   .product-card__price {
-    font-family: "ProximaNovaLight";
     font-size: 1.05rem;
     text-transform: uppercase; }
+    .product-card__price-og {
+      color: #ff0033;
+      text-decoration: line-through;
+      font-family: "ProximaNovaLight"; }
+    .product-card__price-cur {
+      font-family: "ProximaNovaBold"; }
 
 .home__details {
   margin: 3.5rem auto 0 auto;
@@ -363,25 +407,6 @@ body {
   margin-left: -.05rem;
   align-self: stretch; }
 
-.button, .button:link, .button:visited {
-  width: 15rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.2rem 2rem;
-  display: inline-block;
-  transition: all .2s;
-  position: relative;
-  font-size: 1.5rem;
-  border: none;
-  cursor: pointer; }
-
-.button:hover {
-  box-shadow: 0.5rem 0.5rem 1rem rgba(48, 44, 41, 0.2); }
-
-.button--black {
-  color: #ffffff;
-  background-color: #302c29; }
-
 .auth-error {
   color: #ff0033;
   font-size: 1.5rem;
@@ -432,6 +457,38 @@ body {
       border-bottom: .2rem solid transparent; }
       .product-page__ul--li-clickable:hover {
         border-bottom: 0.2rem solid #3d3429; }
+    .product-page__ul--li-selected {
+      font-weight: bold; }
     .product-page__ul--title {
       font-family: "ProximaNovaBold";
       font-size: 1.25rem; }
+
+.product-full {
+  padding-top: 8rem;
+  padding-left: 6rem;
+  padding-right: 6rem; }
+  .product-full-page {
+    display: flex; }
+    .product-full-page__info {
+      flex: 2.5;
+      display: flex;
+      flex-direction: column;
+      align-self: center; }
+      .product-full-page__info-disclaimer {
+        text-align: center;
+        margin-top: 0.75rem;
+        font-family: "ProximaNovaLight";
+        font-size: 1.05rem;
+        text-transform: uppercase; }
+      .product-full-page__info-row {
+        display: flex; }
+        .product-full-page__info-row > h6 {
+          margin-right: auto; }
+    .product-full-page__pics {
+      flex: 4; }
+      .product-full-page__pics-img {
+        height: auto;
+        width: auto;
+        max-height: 85vh;
+        margin: 0 auto;
+        display: block; }

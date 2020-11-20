@@ -14,6 +14,7 @@
     align-items: flex-start;
     margin: 0 2rem 2rem 2rem;
     width: 18rem;
+    cursor: pointer;
 
     &__img {
         height: auto;
@@ -21,6 +22,7 @@
         max-width: 18rem;
         max-height: 26rem;
         margin: 0 auto;
+        display: block;
     }
 
     &__brand {
@@ -40,8 +42,17 @@
     }
 
     &__price {
-        font-family: "ProximaNovaLight";
         font-size: 1.05rem;
         text-transform: uppercase;
+
+        &-og{
+            color: $color-error;
+            text-decoration: line-through;
+            font-family: "ProximaNovaLight";
+        }
+
+        &-cur {
+            font-family: "ProximaNovaBold";
+        }
     }
 }

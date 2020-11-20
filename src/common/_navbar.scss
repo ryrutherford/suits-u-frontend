@@ -8,6 +8,25 @@
     height: 6rem; //change with mq
     z-index: 100;
 
+    &__cart {
+
+        &-box{
+            position: relative;
+        }
+        width: 2rem;
+        height: 2rem;
+        fill: $color-grey-dark-1;
+
+        &-number{
+            font-size: 1rem;
+            position: absolute;
+            top: .5rem;
+            left: 0;
+            min-width: 100%;
+            text-align: center;
+        }
+    }
+
     & > * {
         font-size: 1.4rem;
         text-transform: uppercase;

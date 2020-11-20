@@ -57,34 +57,6 @@
     align-self: stretch;
 }
 
-.button {
-    &,
-    &:link,
-    &:visited {
-        width: 15rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 1.2rem 2rem;
-        display: inline-block;
-        transition: all .2s;
-        position: relative;
-        font-size: 1.5rem;
-
-        //Change for the <button> element
-        border: none;
-        cursor: pointer;
-    }
-
-    &:hover {
-        box-shadow: .5rem .5rem 1rem rgba($color-grey-dark-1, .2);
-    }
-    
-    &--black {
-        color: $color-white;
-        background-color: $color-grey-dark-1;
-    }
-}
-
 .auth-error {
     color: $color-error;
     font-size: 1.5rem;
