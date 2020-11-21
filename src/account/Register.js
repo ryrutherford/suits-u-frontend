@@ -6,6 +6,7 @@ const Register = ({setCEM}) => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [phone, setPhone] = useState("");
     const [error, setError] = useState("");
 
     //TODO: change localhost so domain name
@@ -19,6 +20,7 @@ const Register = ({setCEM}) => {
                     username,
                     email,
                     password,
+                    phoneNumber: phone,
                 } 
             })
             .then((response) => {
@@ -26,11 +28,11 @@ const Register = ({setCEM}) => {
             })
             .catch((error) => {
                 // Handle error.
-                if(error.response){
+                try {
                     setError(error.response.data.data[0].messages[0].message);
                 }
-                else {
-                    console.log(error);
+                catch(error){
+                    setError("Something went wrong. Please clear all cookies for this site and try again.")
                 }
             });      
     }
@@ -40,11 +42,15 @@ const Register = ({setCEM}) => {
             <h2 className="authenticate__form-title">Register</h2>
             <div className="authenticate__form-group">
                 <label htmlFor="username" className="authenticate__form-label">Username</label>
-                <input type="text" className="authenticate__form-input" id="username" value={username} onChange={(event) => setUsername(event.target.value)} required/>
+                <input type="text" className="authenticate__form-input" id="username" value={username} onChange={(event) => setUsername(event.target.value)} required autoComplete="username"/>
+            </div>
+            <div className="authenticate__form-group">
+                <label htmlFor="phone" className="authenticate__form-label">Phone Number</label>
+                <input type="tel" className="authenticate__form-input" id="phone" value={phone} onChange={(event) => setPhone(event.target.value)} required autoComplete="username"/>
             </div>
             <div className="authenticate__form-group">
                 <label htmlFor="regEmail" className="authenticate__form-label">Email Address</label>
-                <input type="email" className="authenticate__form-input" id="regEmail" value={email} onChange={(event) => setEmail(event.target.value)} required/>
+                <input type="email" className="authenticate__form-input" id="regEmail" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="username"/>
             </div>
             <div className="authenticate__form-group">
                 <label htmlFor="regPassword" className="authenticate__form-label">Password</label>

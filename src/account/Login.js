@@ -30,7 +30,12 @@ const Login = ({history, setForgotPassword}) => {
             .catch((error) => {
                 // Handle error.
                 if(error.response){
-                    setError(error.response.data.data[0].messages[0].message);
+                    try {
+                        setError(error.response.data.data[0].messages[0].message);
+                    }
+                    catch(error){
+                        setError("Something went wrong. Please clear all cookies for this site and try again.")
+                    }
                 }
                 else {
                     console.log(error);
@@ -43,7 +48,7 @@ const Login = ({history, setForgotPassword}) => {
             <h2 className="authenticate__form-title">Login</h2>
             <div className="authenticate__form-group">
                 <label htmlFor="loginEmail" className="authenticate__form-label">Email Address</label>
-                <input type="email" className="authenticate__form-input" id="loginEmail" value={email} onChange={(event) => setEmail(event.target.value)} required/>
+                <input type="email" className="authenticate__form-input" id="loginEmail" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="username"/>
             </div>
             <div className="authenticate__form-group">
                 <label htmlFor="loginPassword" className="authenticate__form-label">Password</label>
