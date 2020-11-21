@@ -41,10 +41,12 @@ const Navbar = ({history}) => {
                 {
                     bagHasItems &&
                     <span className="nav__cart-box">
-                        <svg className="nav__cart">
-                            <use xlinkHref={`${svgs}#shopping-bag`}/>
-                        </svg>
-                        <span className="nav__cart-number">{bag.length}</span>
+                        <Link to="/bag" className="link">
+                            <svg className="nav__cart">
+                                <use xlinkHref={`${svgs}#shopping-bag`}/>
+                            </svg>
+                            <span className="nav__cart-number">{bag.length}</span>
+                        </Link>
                     </span>
                 }
             </div>

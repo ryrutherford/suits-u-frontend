@@ -10,6 +10,7 @@ import Authenticate from "../account/Authenticate";
 import ResetPassword from "../account/ResetPassword";
 import ProductPage from "../shop/ProductPage";
 import ProductFull from "../shop/ProductFull";
+import ShoppingBag from "../order/ShoppingBag";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path="/shop/:gender" component={ProductPage}/>
         <Route exact path="/shop/:gender/:category" component={ProductPage}/>
         <Route exact path="/product/:id" component={ProductFull}/>
+        <Route exact path="/bag" component={ShoppingBag}/>
       </Switch>
       <Footer/>
     </div>

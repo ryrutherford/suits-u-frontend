@@ -1,0 +1,127 @@
+.bag {
+    padding-top: 8rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+
+    &__summary {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        width: 85%;
+        margin: 0 auto;
+
+        &-separator {
+            min-width: 100%;
+            height: .25rem;
+            border-radius: 25%;
+            background-color: rgba($color-grey-light-2, .4);
+            display: block;
+            grid-column: 1 / -1;
+            margin-top: 1rem;
+        }
+
+        &-heading {
+            grid-column: 1 / -1;
+
+            & > h2 {
+                font-size: 2rem;
+            }
+
+            & > p {
+                text-align: center;
+            }
+        }
+
+        &-button {
+            margin: 0 auto;
+            grid-column: 1 / -1;
+        }
+
+        &-choice {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2.5rem;
+        }
+
+        &-rules {
+            grid-column: 1 / -1;
+            font-size: 1.5rem;
+            display: flex;
+
+            & > span:first-child {
+                margin-right: 0.5rem;
+            }
+        }
+
+        &-disclaimer {
+            grid-column: 1 / -1;
+        }
+
+        &-total {
+            font-family: "ProximaNovaBold";
+            display: flex;
+            text-transform: uppercase;
+            font-size: 1.05rem;
+
+            &--1 {
+                grid-column: 2 / 3;
+                align-items: center;
+            }
+
+            &--2 {
+                grid-column: 3 / 4;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+    }
+
+    &__product {
+
+        &-img-box {
+            grid-column: 1 / 2;
+            width: 7rem;
+        }
+        &-img {
+            height: auto;
+            width: auto;
+            max-width: 9.8rem;
+            max-height: 14rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        &-info {
+            grid-column: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &-price {
+            grid-column: 3 / 4;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        &-remove {
+            grid-column: 4 / -1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            & > p {
+                cursor: pointer;
+                border-bottom: .2rem solid transparent;
+            }
+
+            & > p:hover {
+                border-bottom: .2rem solid $color-grey-dark-2;
+            }
+        }
+    }
+}

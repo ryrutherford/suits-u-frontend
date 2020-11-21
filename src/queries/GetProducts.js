@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 const GET_PRODUCTS = gql`
-  query GetProducts($categoryName: String, $gender: ENUM_PRODUCT_GENDER, $sort: String, $reservedBy: String){
-    products (sort: $sort, where: {category: {name: $categoryName}, gender: $gender, reservedBy: $reservedBy}) {
+  query GetProducts($categoryName: String, $gender: ENUM_PRODUCT_GENDER, $sort: String, $reservedBy: String, $bag: [String]){
+    products (sort: $sort, where: {category: {name: $categoryName}, gender: $gender, reservedBy: $reservedBy, id_in: $bag}) {
       image {
         url
       }
