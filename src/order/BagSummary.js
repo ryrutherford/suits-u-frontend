@@ -7,6 +7,7 @@ import axios from "axios";
 const BagSummary = ({history, products}) => {
     
     const [beforeOrder, setBeforeOrder] = useState(false);
+    const [error, setError] = useState("");
     
     let bag = JSON.parse(localStorage.getItem("bag"));
     const cookies = new Cookies()
@@ -27,26 +28,11 @@ const BagSummary = ({history, products}) => {
             .then((response) => {
                 console.log("response",response);
                 localStorage.setItem("bag", JSON.stringify([]));
-                history.push("/");
+                history.push("/account");
             })
             .catch((error) => {
-                // Handle error.
-                if(error.response){
-                    console.log("error.response", error.response);
-                    /*
-                    try {
-                        setError(error.response.data.data[0].messages[0].message);
-                    }
-                    catch(error){
-                        setError("Something went wrong. Please clear all cookies for this site and try again.")
-                    }
-                    */
-                }
-                else {
-                    console.log("error", error);
-                    console.log("error.data", error.data);
-                    console.log("error.message", error.message);
-                }
+                setError("Something went wrong. Please clear all cookies for this site and try again!");
+                setBeforeOrder(false);
             });
     }
 
@@ -116,6 +102,7 @@ const BagSummary = ({history, products}) => {
                     <div className="bag__summary-heading">
                         <h2>Shopping Bag</h2>
                         {productsUnavailable !== "" && <p className="auth-error">{productsUnavailable}</p>}
+                        {error !== "" && <p className="auth-error">{error}</p>}
                         <span className="bag__summary-separator"></span>
                     </div>
                     {

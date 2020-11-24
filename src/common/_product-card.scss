@@ -12,15 +12,15 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    margin: 0 2rem 2rem 2rem;
+    margin: 0 auto;
     width: 18rem;
     cursor: pointer;
 
     &__img {
-        height: auto;
+        height: 26rem; //auto
         width: auto;
         max-width: 18rem;
-        max-height: 26rem;
+        //max-height: 26rem;
         margin: 0 auto;
         display: block;
     }

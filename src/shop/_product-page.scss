@@ -7,11 +7,16 @@
 
 
     &__products {
+        /*
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-top: 2rem;
+        */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
         margin-bottom: 2rem;
     }
 

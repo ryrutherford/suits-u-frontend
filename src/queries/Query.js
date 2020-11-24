@@ -30,7 +30,7 @@ const Query = ({ children, query, gender, sort, categoryName, reservedBy, numPro
   if (error) {
     console.log(error);
     return (
-      <span className="auth-error">Products can't be loaded</span>
+      <span className="auth-error">Query Error</span>
     );
   }
   return children({ data });

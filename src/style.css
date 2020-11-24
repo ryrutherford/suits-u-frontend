@@ -68,6 +68,9 @@ body {
     color: #ffffff;
     background-color: #302c29; }
 
+.clickable {
+  cursor: pointer; }
+
 .unclickable {
   width: 15rem;
   color: #3d3429;
@@ -182,14 +185,13 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 auto;
   width: 18rem;
   cursor: pointer; }
   .product-card__img {
-    height: auto;
+    height: 26rem;
     width: auto;
     max-width: 18rem;
-    max-height: 26rem;
     margin: 0 auto;
     display: block; }
   .product-card__brand {
@@ -426,6 +428,11 @@ body {
   font-size: 1.5rem;
   margin-bottom: 1.5rem; }
 
+.auth-success {
+  color: #10ac24;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem; }
+
 .popup {
   position: absolute;
   top: 50%;
@@ -442,6 +449,40 @@ body {
   text-transform: uppercase;
   display: block; }
 
+.account {
+  padding-top: 8rem;
+  padding-left: 6rem;
+  padding-right: 6rem; }
+  .account__heading {
+    font-size: 2rem; }
+
+.order-summary {
+  display: flex;
+  flex-direction: column; }
+  .order-summary-choice {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2.5rem; }
+  .order-summary__heading {
+    display: flex;
+    justify-content: space-between; }
+    .order-summary__heading--col {
+      display: flex;
+      flex-direction: column; }
+      .order-summary__heading--col > * {
+        margin: 0 auto 0 0; }
+      .order-summary__heading--col-right > * {
+        margin: 0 0 0 auto; }
+    .order-summary__heading--date {
+      font-size: 1.4rem; }
+  .order-summary__products {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    overflow: hidden; }
+
 .product-page {
   padding-top: 8rem;
   padding-left: 6rem;
@@ -449,11 +490,16 @@ body {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr; }
   .product-page__products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 2rem;
+    /*
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
     margin-bottom: 2rem; }
   .product-page__categories {
     display: flex;

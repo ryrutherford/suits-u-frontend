@@ -28,7 +28,7 @@ const ProductFullPage = ({product}) => {
     }
 
     const reduceSizes = (acc, cur) => ({size: acc.size + ", " + cur.size})
-    const sizes = product.sizes.length > 1 ? product.sizes.reduce(reduceSizes).size : product.sizes[0].size;
+    const sizes = product.sizes.length > 1 ? product.sizes.reduce(reduceSizes).size : (product.sizes.length > 0 ? product.sizes[0].size : undefined);
     return (
             <div className="product-full-page">
                 <div className="product-full-page__info">
@@ -54,7 +54,7 @@ const ProductFullPage = ({product}) => {
                         <p className="product-card__brand"><span className="product-card__brand product-card__price-og">${product.originalPrice}</span>{" | "}<span className="product-card__brand">${product.price}</span></p>
                     </div>
                     <p className="product-card__description">{product.shortDescription}</p>
-                    <p className="product-card__size">{sizes}</p>
+                    {sizes && <p className="product-card__size">{sizes}</p>}
                     <button className="button button--add button--black" onClick={itemInBag ? removeFromBag : addToBag}>{itemInBag ? "Remove from bag" : "Add to bag"}</button>
                     <p className="product-full-page__info-disclaimer">All orders must be picked up in person in Montreal</p>
                 </div>
