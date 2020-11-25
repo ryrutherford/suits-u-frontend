@@ -15,7 +15,12 @@
         }
         width: 2rem;
         height: 2rem;
-        fill: $color-grey-dark-1;
+        fill: $color-grey-dark-2;
+
+        @include respond(tab-port){
+            width: 4rem;
+            height: 4rem;
+        }
 
         &-number{
             font-size: 1rem;
@@ -24,6 +29,9 @@
             left: 0;
             min-width: 100%;
             text-align: center;
+            @include respond(tab-port){
+                font-size: 2rem;
+            }
         }
     }
 
@@ -32,54 +40,143 @@
         text-transform: uppercase;
     }
 
-    &__title {
-        font-family: 'ProximaNovaBold';
-        font-size: 3.25rem;
-        text-align: center;
-    }
-
     &__box {
         flex: 1;
         display: flex;
         justify-content: center;
+
+        & > span {
+            cursor: pointer;
+            transition: all .2s;
+            border-bottom: .2rem solid transparent;
+    
+            &:hover {
+                border-bottom: .2rem solid $color-grey-dark-2;
+            }
+        }
+
+        &:first-child > span { 
+            margin-left: 1.5rem;
+
+            &:first-child {
+                margin-left: 2.25rem;
+            }
+
+            &:last-child {
+                margin-right: auto;
+            }
+        }
+
+        &:last-child > span { 
+            margin-right: 1.5rem;
+
+            &:last-child { 
+                margin-right: 2.25rem;
+            }
+
+            &:first-child {
+                margin-left: auto;
+            }
+        }
     }
 
-    &__box > span {
+    &__title {
+        font-family: 'ProximaNovaBold';
+        font-size: 3.25rem;
+        text-align: center;
+
+        & > span:hover {
+            transform: scale(1.05);
+            border-bottom: .2rem solid transparent;
+        }
+    }
+
+    &__menu {
+
+        position: fixed;
+        top: 1.65rem;
+        left: 1.5rem;
+        width: 3.5rem;
+        z-index: 1000;
         cursor: pointer;
-        transition: all .2s;
-        border-bottom: .2rem solid transparent;
-    }
 
-    &__box > span:hover {
-        border-bottom: .2rem solid $color-grey-dark-2;
-    }
+        &-bar {
 
-    &__title > span:hover {
-        transform: scale(1.05);
-        border-bottom: .2rem solid transparent;
-    }
+            &-1, &-2, &-3 {
+                background-color: $color-grey-dark-1;
+                width: 3.5rem;
+                height: .3rem;
+                transition: all .2s;
+            }
 
-    &__box:first-child > span { 
-        margin-left: 1.5rem;
-    }
+            &-1 {
+                margin-bottom: .8rem;
+            }
 
-    &__box:first-child > span:first-child {
-        margin-left: 2.25rem;
-    }
+            &-3 {
+                margin-top: .8rem;
+            }
+        }
 
-    &__box:first-child > span:last-child {
-        margin-right: auto;
-    }
+        &--popup {
+            z-index: 999;
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            background-color: $color-white;
+            overflow: hidden;
 
-    &__box:last-child > span { 
-        margin-right: 1.5rem;
-    }
+            & > ul {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
 
-    &__box:last-child > span:last-child { 
-        margin-right: 2.25rem;
-    }
+        &--li{
+            text-align: center;
 
-    &__box:last-child > span:first-child {
-        margin-left: auto;
+            & > span {
+                cursor: pointer;
+                transition: all .2s;
+                border-bottom: .2rem solid transparent;
+                font-size: 4rem;
+
+                &:not(:last-child){
+                    margin-bottom: 2.5rem;
+                }
+
+                &:hover {
+                    border-bottom: .2rem solid $color-grey-dark-2;
+                }
+            }
+        }        
+    }
+}
+
+.trans.nav__menu-bar-1 {
+    -webkit-transform: rotate(-45deg) translate(-.9rem, .6rem);
+    transform: rotate(-45deg) translate(-.9rem, .6rem);
+}
+
+.trans.nav__menu-bar-2 {
+    opacity: 0;
+}
+
+.trans.nav__menu-bar-3 {
+    -webkit-transform: rotate(45deg) translate(-.8rem, -.8rem);
+    transform: rotate(45deg) translate(-.8rem, -.8rem);
+}
+
+.hidden-max {
+    @include respond(tab-port){
+        display: none;
+    }
+}
+
+.hidden-min {
+    @include respond(tab-port-min){
+        display: none;
     }
 }

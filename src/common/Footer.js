@@ -1,6 +1,6 @@
 import React from "react";
-//import MUSLogo from "../imgs/MUS_inverse.png"
-import svgs from "../icomoon/sprite.svg"
+//import MUSLogo from "../img/MUS_inverse.png"
+import svgs from "../img/sprite.svg"
 import {Link} from "react-router-dom";
 
 const Footer = () => {
@@ -35,7 +35,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="footer__copy">
-                    <Link to="/" className="link">Suits U Montreal</Link> &copy; {new Date().getFullYear()}
+                    <Link to="/" className="link">Suits U Montreal</Link> | <a href="https://www.linkedin.com/in/adryan-rutherford-670ba114b/" className="link" target="_blank" rel="noopener noreferrer">Ry Rutherford</a> &copy; {new Date().getFullYear()}
                 </div>
             </footer>
         </section>

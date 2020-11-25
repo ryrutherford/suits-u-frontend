@@ -1,5 +1,5 @@
 import React from "react"
-import ZVideo from "../imgs/fear-of-god-for-ermenegildo-zegna.mp4"
+import ZVideo from "../img/fear-of-god-for-ermenegildo-zegna.mp4"
 
 
 const Video = () => {

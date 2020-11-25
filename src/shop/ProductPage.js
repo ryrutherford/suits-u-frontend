@@ -13,7 +13,6 @@ const ProductPage = ({match, history}) => {
     const [sort, setSort] = useState("createdAt:desc");
 
     if(gender !== "men" && gender !== "women"){
-        console.log(gender);
         return <Redirect to="/"/>;
     }
 
@@ -36,7 +35,7 @@ const ProductPage = ({match, history}) => {
                                                 //event.preventDefault();
                                                 history.replace(`/shop/${gender}`);
                                             }}>
-                                    All
+                                    <span>All</span>
                                 </li>
                                 {[...new Set(products.map((product, i) => {
                                         return(
@@ -70,13 +69,13 @@ const ProductPage = ({match, history}) => {
                             Sort
                         </li>
                         <li className={`product-page__ul--li-clickable ${sort === "createdAt:desc" ? "product-page__ul--li-selected" : ""}`} onClick={(event) => changeSorting(event, "createdAt:desc")}>
-                            Newest Arrivals
+                            <span>Newest Arrivals</span>
                         </li>
                         <li className={`product-page__ul--li-clickable ${sort === "price:asc" ? "product-page__ul--li-selected" : ""}`} onClick={(event) => changeSorting(event, "price:asc")}>
-                            Price: Low-High
+                            <span>Price: Low-High</span>
                         </li>
                         <li className={`product-page__ul--li-clickable ${sort === "price:desc" ? "product-page__ul--li-selected" : ""}`} onClick={(event) => changeSorting(event, "price:desc")}>
-                            Price: High-Low
+                            <span>Price: High-Low</span>
                         </li>
                     </ul>
                 </section>

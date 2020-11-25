@@ -26,7 +26,6 @@ const BagSummary = ({history, products}) => {
                 } 
             })
             .then((response) => {
-                console.log("response",response);
                 localStorage.setItem("bag", JSON.stringify([]));
                 history.push("/account");
             })

@@ -17,7 +17,7 @@ const Team = () => {
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Samantha Sagredo"/>
                     <h3>Samantha Sagredo</h3>
                     <p>Co-President</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BCom Retail Management and Managing for Sustainability</p>
                 </div>
             </div>
             <div className="team__title">
@@ -34,13 +34,13 @@ const Team = () => {
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Cole Millinger"/>
                     <h3>Cole Millinger</h3>
                     <p>Team Member Business Development</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BCom Business Analytics and Retail Management</p>
                 </div>
                 <div className="team__members-member">
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Gabby Urvari"/>
                     <h3>Gabby Urvari</h3>
                     <p>Team Member Business Development</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BA Philosophy</p>
                 </div>
             </div>
             <div className="team__title">
@@ -51,19 +51,19 @@ const Team = () => {
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Emma Trudeau"/>
                     <h3>Emma Trudeau</h3>
                     <p>VP Operations</p>
-                    <p>U3 | BCom Something</p>
+                    <p>U3 | BCom Finance</p>
                 </div>
                 <div className="team__members-member">
                     <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027263/suitsu/123259673_812018182928562_848497563752829042_n_db3xkq.jpg" alt="Sarah Wang"/>
                     <h3>Sarah Wang</h3>
                     <p>Team Member Operations</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BCom International Management</p>
                 </div>
                 <div className="team__members-member">
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Arden Parker"/>
                     <h3>Arden Parker</h3>
                     <p>Team Member Operations</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BA&Sc Cognitive Science</p>
                 </div>
             </div>
             <div className="team__title">
@@ -74,19 +74,19 @@ const Team = () => {
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Arden McKillop"/>
                     <h3>Arden McKillop</h3>
                     <p>VP Marketing</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BCom xxxxx</p>
                 </div>
                 <div className="team__members-member">
                     <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027262/suitsu/123080240_477334346516391_9038941809618046832_n_i1wgbe.jpg" alt="Margaux Koene"/>
                     <h3>Margaux Koeune</h3>
                     <p>Team Member Marketing</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BA Industrial Relations</p>
                 </div>
                 <div className="team__members-member">
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Grace Doris"/>
                     <h3>Grace Doris</h3>
                     <p>Team Member Marketing</p>
-                    <p>U2 | BA Something</p>
+                    <p>U2 | BA Sociology</p>
                 </div>
             </div>
             <div className="team__title">
@@ -97,7 +97,7 @@ const Team = () => {
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Ariane Petri"/>
                     <h3>Ariane Petri</h3>
                     <p>VP Logistics</p>
-                    <p>U2 | BCom Something</p>
+                    <p>U2 | BCom Finance</p>
                 </div>
                 <div className="team__members-member">
                     <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Jess Hanson"/>
@@ -114,7 +114,7 @@ const Team = () => {
                     <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027263/suitsu/123138872_359803648560364_2071865284352020965_n_tc92cv.jpg" alt="Olivia Bosa"/>
                     <h3>Olivia Bosa</h3>
                     <p>VP Finance</p>
-                    <p>U2 | BCom Finance</p>
+                    <p>U2 | BCom Accounting and Finance</p>
                 </div>
             </div>
         </section>

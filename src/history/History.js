@@ -1,4 +1,5 @@
 import React from "react";
+import Sponsorships from "./Sponsorships";
 
 const History = () => {
     return (
@@ -16,7 +17,7 @@ const History = () => {
                     <div className="history__timeline-content">
                         <h2>2017</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eveniet harum neque doloribus pariatur temporibus itaque inventore voluptas! Suscipit voluptatem inventore provident illum ratione necessitatibus, voluptates repellendus minus placeat vitae.
+                            Suits U Montreal is founded by a couple of McGill students. One suit sale is held along with a tie sale and some other minor fundraising events like churro sales. Partnerships with local businesses begin to form with law firms like Blake's and McCarthy Tétrault donating suits and Tim Hortons providing coffee for events. All profits are donated to Sun Youth.
                         </p>
                     </div>
                 </div>
@@ -24,7 +25,7 @@ const History = () => {
                     <div className="history__timeline-content">
                         <h2>2018</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam at facilis exercitationem aut impedit inventore fuga eveniet, maxime debitis nemo voluptatem quo nobis unde sunt assumenda consectetur voluptates similique.
+                            Two suit sales are held on McGill campus leading to double the money raised for Sun Youth. New partnerships with local firms like Richter, RDS, and McMillan are formed.
                         </p>
                     </div>
                 </div>
@@ -32,7 +33,7 @@ const History = () => {
                     <div className="history__timeline-content">
                         <h2>2019</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At similique ipsa natus quibusdam aliquam fugiat delectus nobis! Nam possimus quo, laborum officiis ad quos inventore similique labore debitis maiores quidem!
+                            Suits U Montreal joins McGill's Management Undergraduate Society (MUS) where it is now officially affiliated with McGill University. A suit sale is held in the fall in McGill's famous Arts building leading to the highest event turnout and profit. Over $1000 is donated to McGill Students' for Parkinson's Awareness. Suits U Montreal is represented at Fashion Business Uncovered's 2019 conference with two club members as panelists.
                         </p>
                         </div>
                 </div>
@@ -40,7 +41,7 @@ const History = () => {
                     <div className="history__timeline-content">
                         <h2>2020</h2>
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ut, doloribus iste porro repellat voluptate quo. Minus excepturi, nostrum iure atque quaerat dolore beatae mollitia esse, distinctio, ratione quo necessitatibus?
+                            The largest suit drive yet (in partnership with Maison Manuvie), a collaboration with SynesthASIA McGill, and another suit sale is planned for the winter semester but are all cancelled due to the Coronavirus. In the fall, resume writing and cover letter tips are delivered through online vidoes in partnership with AIESEC.
                         </p>
                     </div>
                 </div>
@@ -48,11 +49,12 @@ const History = () => {
                     <div className="history__timeline-content">
                         <h2>2021</h2>
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ut, doloribus iste porro repellat voluptate quo. Minus excepturi, nostrum iure atque quaerat dolore beatae mollitia esse, distinctio, ratione quo necessitatibus?
+                            Suits U Montreal's website is launched, enabling students around Montreal to purchase our items at anytime. 
                         </p>
                     </div>
                 </div>
             </div>
+            <Sponsorships/>
         </section>
     );
 }

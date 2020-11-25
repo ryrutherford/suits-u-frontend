@@ -145,3 +145,40 @@ body {
     color: $color-grey-dark-2;
     background-color: $color-grey-light-1;
 }
+
+//MEDIA QUERY MANAGER
+//0-600px PHONE
+//600-900px Tablet portrait
+//900-1200px Tablet landscape
+//1200-1800 normal styles
+//1800px+ big desktop
+
+//ORDER: Base + typography > general layout + grid > page layout > components
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+      @media (max-width: 37.5em) { //600px
+        @content
+      };
+    }
+    @if $breakpoint == tab-port { //900px
+      @media (max-width: 58.125em){
+        @content
+      };
+    }
+    @if $breakpoint == tab-port-min { //900px
+        @media (min-width: 58.125em){
+          @content
+        };
+      }
+    @if $breakpoint == tab-land { //1200px
+      @media (max-width: 75em){
+        @content
+      };
+    }
+    @if $breakpoint == big-desktop { //1800px
+      @media (min-width: 112.5em){
+        @content
+      };
+    }
+  }

@@ -45,6 +45,10 @@
                 border-radius: 0;
                 text-indent: .5rem;
             }
+
+            @include respond(tab-port){
+                margin: 0 auto;
+            }
         }
     }
 }
@@ -55,6 +59,16 @@
     height: auto;
     margin-left: -.05rem;
     align-self: stretch;
+    animation: all .2s;
+
+    @include respond(tab-port){
+        margin-top: 3.5rem;
+        margin-left: 0;
+        padding-top: 2rem;
+        width: 80%;
+        border-left: none;
+        border-top: .1rem solid $color-primary
+    }
 }
 
 .auth-error {

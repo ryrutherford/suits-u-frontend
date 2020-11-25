@@ -4,7 +4,6 @@ import axios from "axios";
 const OrderSummary = ({order, setResponse, setError, beforeCancel, setCancel}) => {
 
     const [expand, setExpand] = useState(0);
-    console.log(order);
     const cancelOrder = (event, id) => {
         event.preventDefault();
         axios({
@@ -16,7 +15,6 @@ const OrderSummary = ({order, setResponse, setError, beforeCancel, setCancel}) =
                 }
             })
             .then((response) => {
-                console.log("response",response);
                 setResponse(`Order #${id} cancelled succesfully`);
                 setCancel(false);
             })
@@ -48,10 +46,10 @@ const OrderSummary = ({order, setResponse, setError, beforeCancel, setCancel}) =
                 <div className="order-summary__heading--col order-summary__heading--col-right">
                     <p className="order-summary__heading--date">{new Date(Date.parse(order.createdAt)).toLocaleString()}</p>
                     <a href="https://calendly.com/ry-rutherford99/suits-u-pickup?month=2020-11" className="product-card__size link" target="_blank" rel="noopener noreferrer">Sign up for pickup slot</a>
-                    <p className="product-card__brand clickable" onClick={() => {
+                    {/*<p className="product-card__brand clickable" onClick={() => {
                         setExpand(0);
                         setCancel(true);
-                        }}>Cancel Order</p>
+                        }}>Cancel Order</p>*/}
                 </div>
             </div>
             }

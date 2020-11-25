@@ -31,7 +31,9 @@ const Account = () => {
             });
         }
 
-        getOrders();
+        if(userID){
+            getOrders();
+        }
     }, [userID, responseMessage, error]);
 
     if(!userID){

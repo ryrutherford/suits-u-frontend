@@ -4,8 +4,7 @@ import {Link} from "react-router-dom";
 const ProductCard = ({product}) => {
     const [imageIndex, setImageIndex] = useState(0);
     const multipleImages = product.image.length > 1 ? true : false;
-    const reduceSizes = (acc, cur) => ({size: acc.size + ", " + cur.size})
-    console.log("size", product.sizes);
+    const reduceSizes = (acc, cur) => ({size: acc.size + ", " + cur.size});
     const sizes = product.sizes.length > 1 ? product.sizes.reduce(reduceSizes).size : (product.sizes.length > 0 ? product.sizes[0].size : undefined);
     return (
             <Link to={`/product/${product.id}`} className="link">
