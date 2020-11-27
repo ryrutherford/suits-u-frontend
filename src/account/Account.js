@@ -10,8 +10,6 @@ const Account = () => {
 
     const [orders, setOrders] = useState([]);
     const [error, setError] = useState("");
-    const [responseMessage, setResponse] = useState("");
-    const [beforeCancel, setCancel] = useState(false);
 
     useEffect(() => {
         const getOrders = async () => {
@@ -34,7 +32,7 @@ const Account = () => {
         if(userID){
             getOrders();
         }
-    }, [userID, responseMessage, error]);
+    }, [userID, error]);
 
     if(!userID){
         return <Redirect to="/authenticate"/>
@@ -45,11 +43,10 @@ const Account = () => {
             <h2 className="account__heading">Order History</h2>
             <span className="bag__summary-separator"></span>
             {error && <p className="product-card__size auth-error">{error}</p>}
-            {responseMessage && <p className="product-card__size auth-success">{responseMessage}</p>}
             {orders.length !== 0 && 
                 orders.map((order, index) => {
                     return(
-                        <OrderSummary key={index} order={order} setResponse={setResponse} setError={setError} beforeCancel={beforeCancel} setCancel={setCancel}/>
+                        <OrderSummary key={index} order={order} setError={setError}/>
                     );
                 })
             }

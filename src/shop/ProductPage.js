@@ -5,6 +5,7 @@ import GET_PRODUCTS from "../queries/GetProducts";
 import GET_CATEGORIES from "../queries/GetCategories";
 import {withRouter, Redirect} from "react-router-dom";
 import { useViewport } from "../common/ReactMediaQuery";
+import axios from "axios";
 
 const ProductPage = ({match, history}) => {
 
