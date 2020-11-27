@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import ProductSkeleton from "../common/ProductSkeleton";
 
 
-const Query = ({ children, query, gender, sort, categoryName, reservedBy, numProducts, id, bag}) => {
+const Query = ({ children, query, gender, sort, categoryName, reservedBy, numProducts, id, bag, limit, start}) => {
   if(gender === 'men'){
     gender = 'Men';
   }
@@ -17,7 +17,9 @@ const Query = ({ children, query, gender, sort, categoryName, reservedBy, numPro
       sort: sort,
       reservedBy: reservedBy,
       id: id,
-      bag: bag
+      bag: bag,
+      limit: limit,
+      start: start
     }
   });
 
