@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 const BagItem = ({product}) => {
     const [imageIndex, setImageIndex] = useState(0);
@@ -17,7 +18,9 @@ const BagItem = ({product}) => {
     return(
         <>
             <div className="bag__product-img-box">
-                <img src={product.image[imageIndex].url} alt={product.shortDescription} className="bag__product-img" onMouseOver={() => multipleImages ? setImageIndex(1-imageIndex) : null} onMouseOut={() => multipleImages ? setImageIndex(1-imageIndex) : null}/>
+                <Link to={`/product/${product.id}`} className="link">
+                    <img src={product.image[imageIndex].url} alt={product.shortDescription} className="bag__product-img" onMouseOver={() => multipleImages ? setImageIndex(1-imageIndex) : null} onMouseOut={() => multipleImages ? setImageIndex(1-imageIndex) : null}/>
+                </Link>
             </div>
             <div className="bag__product-info">
                 <h6 className="product-card__brand">{product.brand}</h6>

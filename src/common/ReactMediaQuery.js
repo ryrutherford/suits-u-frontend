@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+
+/**
+ * this is not my code
+ * credit to: Ben Honeywill
+ * https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/
+ */
 
 const viewportContext = React.createContext({});
 
 const ViewportProvider = ({ children }) => {
-  // This is the exact same logic that we previously had in our hook
 
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const handleWindowResize = () => {
     setWidth(window.innerWidth);
@@ -24,7 +29,7 @@ const ViewportProvider = ({ children }) => {
 };
 
 const useViewport = () => {
-  const { width } = React.useContext(viewportContext);
+  const { width } = useContext(viewportContext);
   return { width };
 }
 

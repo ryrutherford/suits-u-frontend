@@ -83,15 +83,16 @@
 
         &-img-box {
             grid-column: 1 / 2;
-            width: 7rem;
+            max-width: 9.8rem;
         }
         &-img {
-            height: auto;
+            height: 14rem;
             width: auto;
             max-width: 9.8rem;
-            max-height: 14rem;
             margin: 0 auto;
             display: block;
+            object-fit: contain;
+            object-position: bottom;
         }
 
         &-info {

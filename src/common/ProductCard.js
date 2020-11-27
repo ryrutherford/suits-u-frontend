@@ -7,7 +7,7 @@ const ProductCard = ({product}) => {
     const reduceSizes = (acc, cur) => ({size: acc.size + ", " + cur.size});
     const sizes = product.sizes.length > 1 ? product.sizes.reduce(reduceSizes).size : (product.sizes.length > 0 ? product.sizes[0].size : undefined);
     return (
-            <Link to={`/product/${product.id}`} className="link">
+            <Link to={`/product/${product.id}`} className="link margin-auto">
                 <div className="product-card">
                     <img src={product.image[imageIndex].url} alt={product.shortDescription} className="product-card__img" onMouseOver={() => multipleImages ? setImageIndex(1-imageIndex) : null} onMouseOut={() => multipleImages ? setImageIndex(1-imageIndex) : null}/>
                     <h6 className="product-card__brand">{product.brand}</h6>

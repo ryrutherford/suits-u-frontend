@@ -4,6 +4,7 @@
     padding-right: 6rem;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    min-height: 100vh;
 
     @include respond(tab-port){
         padding-left: 4rem;
@@ -103,5 +104,30 @@
         margin-bottom: 1rem;
         text-align: center;
         min-width: 85%;
+    }
+
+    &__pagination {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+
+        & > span {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            cursor: pointer;
+            border-bottom: .2rem solid transparent;
+            transition: all .2s;
+
+            &:hover {
+                border-bottom: .2rem solid $color-grey-dark-2;
+            }
+        }
+
+        &--bold {
+            font-family: "ProximaNovaBold";
+        }
     }
 }

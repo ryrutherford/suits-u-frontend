@@ -1,19 +1,47 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ProductCard from "../common/ProductCard";
 import Query from "../queries/Query";
 import GET_PRODUCTS from "../queries/GetProducts";
-import GET_CATEGORIES from "../queries/GetCategories";
+import GET_PRODUCT_COUNT from "../queries/GetProductCount";
 import {withRouter, Redirect} from "react-router-dom";
 import { useViewport } from "../common/ReactMediaQuery";
 import axios from "axios";
 
 const ProductPage = ({match, history}) => {
 
+    const [categoryNames, setCategoryNames] = useState([]);
+    const [sort, setSort] = useState("createdAt:desc");
+    const [pageNumber, setPageNumber] = useState(1);
+    const { width } = useViewport();
     const gender = match.params.gender;
     const category = match.params.category;
-    //const [category, setCategory] = useState(undefined);
-    const [sort, setSort] = useState("createdAt:desc");
-    const { width } = useViewport();
+    const numProductsPerPage = 24;
+
+    console.log("pagenumber", pageNumber);
+
+    useEffect(() => {
+        //g is the gender
+        const getCategories = async (g) => {
+            await axios({
+                method: 'GET',
+                url: `${process.env.REACT_APP_BACKEND_URL}/products/categories/${g}`,
+            })
+            .then((response) => {
+                //console.log("response",response);
+                setCategoryNames(response.data);
+            })
+            .catch((error) => {
+                //console.log("error", error);
+            });
+        }
+
+        if(gender === "men"){
+            getCategories("Men");
+        }
+        else if(gender === "women"){
+            getCategories("Women");
+        }
+    }, [gender])
 
     if(gender !== "men" && gender !== "women"){
         return <Redirect to="/"/>;
@@ -27,55 +55,51 @@ const ProductPage = ({match, history}) => {
     return(
         <section>
             <div className="product-page">
-                <Query query={GET_CATEGORIES} reservedBy="NONE" gender={gender} numProducts={0}>
-                    {({data: {products}}) => { return (
-                        <section className="product-page__categories">
-                            {width >= 931 && <ul className="product-page__ul">
+                <section className="product-page__categories">
+                    {width >= 931 && <ul className="product-page__ul">
+                        <li className="product-page__ul--title">
+                            Categories
+                        </li>
+                        <li className={`product-page__ul--li-clickable ${category === undefined ? "product-page__ul--li-selected" : ""}`} onClick={() => {
+                                        setPageNumber(1);
+                                        history.replace(`/shop/${gender}`);
+                                    }}>
+                            <span>All</span>
+                        </li>
+                        {[(categoryNames.map((cat, i) => {
+                                return(
+                                    <li key={i} id={cat.name} className={`product-page__ul--li-clickable ${category === cat.name ? "product-page__ul--li-selected" : ""}`} onClick={() => {
+                                        setPageNumber(1);
+                                        history.replace(`/shop/${gender}/${cat.name}`);
+                                    }}>
+                                        <span>{cat.name}</span>
+                                    </li>
+                                );
+                            }))]}
+                    </ul>}
+                    {width < 931 &&
+                        <div className="product-page__mobile">
+                            <ul className="product-page__ul">
                                 <li className="product-page__ul--title">
                                     Categories
                                 </li>
-                                <li className={`product-page__ul--li-clickable ${category === undefined ? "product-page__ul--li-selected" : ""}`} onClick={() => {
-                                                history.replace(`/shop/${gender}`);
-                                            }}>
-                                    <span>All</span>
-                                </li>
-                                {[([...new Set(products.map((p) => p.category.name))].map((cat, i) => {
-                                        return(
-                                            <li key={i} id={cat} className={`product-page__ul--li-clickable ${category === cat ? "product-page__ul--li-selected" : ""}`} onClick={(event) => {
-                                                //event.preventDefault();
-                                                //setCategory(product.category.name);
-                                                history.replace(`/shop/${gender}/${cat}`);
-                                            }}>
-                                                <span>{cat}</span>
-                                            </li>
-                                        );
-                                    }))]}
-                            </ul>}
-                            {width < 931 &&
-                                <div className="product-page__mobile">
-                                    <ul className="product-page__ul">
-                                        <li className="product-page__ul--title">
-                                            Categories
-                                        </li>
-                                    </ul>
-                                    <select onChange={(event) => {
-                                        history.replace(event.target.value);
-                                    }}>
-                                        <option value={`/shop/${gender}`} className={`product-page__ul--li-clickable ${category === undefined ? "product-page__ul--li-selected" : ""}`}>
-                                            All
+                            </ul>
+                            <select onChange={(event) => {
+                                history.replace(event.target.value);
+                            }}>
+                                <option value={`/shop/${gender}`} className={`product-page__ul--li-clickable ${category === undefined ? "product-page__ul--li-selected" : ""}`}>
+                                    All
+                                </option>
+                                {[(categoryNames.map((cat, i) => {
+                                    return(
+                                        <option key={i} id={cat.name} value={`/shop/${gender}/${cat.name}`} className={`product-page__ul--li-clickable ${category === cat.name ? "product-page__ul--li-selected" : ""}`}>
+                                            {cat.name}
                                         </option>
-                                        {[([...new Set(products.map((p) => p.category.name))].map((cat, i) => {
-                                            return(
-                                                <option key={i} id={cat} value={`/shop/${gender}/${cat}`} className={`product-page__ul--li-clickable ${category === cat ? "product-page__ul--li-selected" : ""}`}>
-                                                    {cat}
-                                                </option>
-                                            );
-                                        }))]}
-                                        </select>
-                                    </div>}
-                        </section>
-                    );}}
-                </Query>
+                                    );
+                                }))]}
+                            </select>
+                        </div>}
+                    </section>
                 {width < 931 && <section className="product-page__filters">
                     <div className="product-page__mobile">
                         <ul className="product-page__ul">
@@ -97,15 +121,16 @@ const ProductPage = ({match, history}) => {
                     </div>
                 </section>
                 }
-                <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} numProducts={0} categoryName={category}>
+                <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} numProducts={0} categoryName={category} limit={numProductsPerPage} start={(pageNumber - 1)*numProductsPerPage}>
                     {({data: {products}}) => { return (
-                        <section className="product-page__products">
-                            {products.map((product, i) => {
-                                return (
-                                    <ProductCard product={product} key={i}/>
-                                );
-                            })}
-                        </section>
+                        products.length === 0 ? <span className="auth-error margin-auto">There are no products available for {gender} in the following category: {category ? category : "all categories"}</span> :
+                            <section className="product-page__products">
+                                {products.map((product, i) => {
+                                    return (
+                                        <ProductCard product={product} key={i}/>
+                                    );
+                                })}
+                            </section>
                     );}}
                 </Query>
                 {width >= 931 && <section className="product-page__filters">
@@ -124,6 +149,18 @@ const ProductPage = ({match, history}) => {
                         </li>
                     </ul>
                 </section>}
+                <Query query={GET_PRODUCT_COUNT} reservedBy="NONE" gender={gender} categoryName={category} numProducts={0}>
+                    {({data: {productsCount}}) => {
+                        return (
+                            <div className="product-page__pagination">
+                                {[...new Array(Math.ceil(productsCount/numProductsPerPage))].map((p, index) => {return (
+                                        <span className={index + 1 === pageNumber ? "product-page__pagination--bold" : null} key={index + 1} onClick={(event) => {
+                                            setPageNumber(parseInt(event.target.innerText));
+                                            }}>{index + 1}</span>
+                                    );})}
+                            </div>
+                            );}}
+                </Query>
             </div>
         </section>
     )

@@ -34,10 +34,11 @@ const OrderSummary = ({order}) => {
                                     <p className="product-card__price"><span className="product-card__price-cur">${product.price.toFixed(2)} CAD</span></p>
                                 </div>
                             </div>
+                            {i !== order.products.length - 1 && <span className="bag__summary-separator"></span>}
                         </React.Fragment>
                 );})
             }
-            {!beforeCancel && <span className="bag__summary-separator"></span>}
+            <span className="bag__summary-separator"></span>
         </div>
     );
 }
