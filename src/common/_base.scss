@@ -30,10 +30,56 @@ $bp-small: 37.5em;    // 600px;
     box-sizing: inherit;
 }
 
+//MEDIA QUERY MANAGER
+//0-600px PHONE
+//600-900px Tablet portrait
+//900-1200px Tablet landscape
+//1200-1800 normal styles
+//1800px+ big desktop
+
+//ORDER: Base + typography > general layout + grid > page layout > components
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-small {
+    @media (max-width: 18.75em) { //600px
+      @content
+    };
+  }
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { //600px
+      @content
+    };
+  }
+  @if $breakpoint == tab-port { //931px
+    @media (max-width: 58.1875em){
+      @content
+    };
+  }
+  @if $breakpoint == tab-port-min { //933px
+      @media (min-width: 58.3125em){
+        @content
+      };
+    }
+  @if $breakpoint == tab-land { //1200px
+    @media (max-width: 75em){
+      @content
+    };
+  }
+  @if $breakpoint == big-desktop { //1800px
+    @media (min-width: 112.5em){
+      @content
+    };
+  }
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
     min-height: 100%;
+
+    @include respond(phone){
+      font-size: 50%;
+    }
 }
 
 @font-face {
@@ -146,39 +192,22 @@ body {
     background-color: $color-grey-light-1;
 }
 
-//MEDIA QUERY MANAGER
-//0-600px PHONE
-//600-900px Tablet portrait
-//900-1200px Tablet landscape
-//1200-1800 normal styles
-//1800px+ big desktop
+.hidden-max {
+  @include respond(tab-port){
+      display: none;
 
-//ORDER: Base + typography > general layout + grid > page layout > components
-
-@mixin respond($breakpoint) {
-    @if $breakpoint == phone {
-      @media (max-width: 37.5em) { //600px
-        @content
-      };
-    }
-    @if $breakpoint == tab-port { //900px
-      @media (max-width: 58.125em){
-        @content
-      };
-    }
-    @if $breakpoint == tab-port-min { //900px
-        @media (min-width: 58.125em){
-          @content
-        };
+      * {
+          display: none;
       }
-    @if $breakpoint == tab-land { //1200px
-      @media (max-width: 75em){
-        @content
-      };
-    }
-    @if $breakpoint == big-desktop { //1800px
-      @media (min-width: 112.5em){
-        @content
-      };
-    }
   }
+}
+
+.hidden-min {
+  @include respond(tab-port-min){
+      display: none;
+
+      * {
+          display: none;
+      }
+  }
+}

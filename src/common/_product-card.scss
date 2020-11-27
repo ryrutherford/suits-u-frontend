@@ -20,9 +20,10 @@
         height: 26rem; //auto
         width: auto;
         max-width: 18rem;
-        //max-height: 26rem;
         margin: 0 auto;
         display: block;
+        object-fit: contain;
+        object-position: bottom;
     }
 
     &__brand {
@@ -53,6 +54,14 @@
 
         &-cur {
             font-family: "ProximaNovaBold";
+        }
+    }
+
+    @include respond(phone){
+
+        &__image {
+            max-width: 16rem;
+            max-height: 24rem;
         }
     }
 }

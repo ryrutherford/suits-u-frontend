@@ -11,24 +11,27 @@ import ResetPassword from "../account/ResetPassword";
 import ProductPage from "../shop/ProductPage";
 import ProductFull from "../shop/ProductFull";
 import ShoppingBag from "../order/ShoppingBag";
+import { ViewportProvider } from "../common/ReactMediaQuery";
 
 const App = () => {
   return (
     <div className="container">
-      <Navbar/>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/history" component={History}/>
-        <Route exact path="/team" component={Team}/>
-        <Route exact path="/authenticate" component={Authenticate}/>
-        <Route exact path="/account" component={Account}/>
-        <Route exact path="/reset-password" component={ResetPassword}/>
-        <Route exact path="/shop/:gender" component={ProductPage}/>
-        <Route exact path="/shop/:gender/:category" component={ProductPage}/>
-        <Route exact path="/product/:id" component={ProductFull}/>
-        <Route exact path="/bag" component={ShoppingBag}/>
-      </Switch>
-      <Footer/>
+      <ViewportProvider>
+        <Navbar/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/history" component={History}/>
+          <Route exact path="/team" component={Team}/>
+          <Route exact path="/authenticate" component={Authenticate}/>
+          <Route exact path="/account" component={Account}/>
+          <Route exact path="/reset-password" component={ResetPassword}/>
+          <Route exact path="/shop/:gender" component={ProductPage}/>
+          <Route exact path="/shop/:gender/:category" component={ProductPage}/>
+          <Route exact path="/product/:id" component={ProductFull}/>
+          <Route exact path="/bag" component={ShoppingBag}/>
+        </Switch>
+        <Footer/>
+      </ViewportProvider>
     </div>
   );
 }

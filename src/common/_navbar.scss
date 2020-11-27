@@ -168,15 +168,3 @@
     -webkit-transform: rotate(45deg) translate(-.8rem, -.8rem);
     transform: rotate(45deg) translate(-.8rem, -.8rem);
 }
-
-.hidden-max {
-    @include respond(tab-port){
-        display: none;
-    }
-}
-
-.hidden-min {
-    @include respond(tab-port-min){
-        display: none;
-    }
-}

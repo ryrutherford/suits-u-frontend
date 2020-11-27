@@ -12,7 +12,7 @@
         position: relative;
         margin: 0 auto;
         max-width: 85%;
-        padding-bottom: 3rem;
+        margin-bottom: 3rem;
 
         &::after {
             content: '';
@@ -20,7 +20,7 @@
             width: .6rem;
             background-color: $color-primary;
             top: 1.9rem;
-            bottom: 15.2rem;
+            bottom: 0;
             left: 50%;
             margin-left: -.3rem;
             box-shadow: .2rem .2rem 1rem rgba($color-grey-dark-1, .2);
@@ -93,7 +93,6 @@
             /* Place the timelime to the left */
             &::after {
                 left: 3.1rem;
-                bottom: 20rem;
             }
         
             /* Full-width containers */
@@ -123,6 +122,7 @@
                 }
             }
         }
+
         //width: 80%;
         //text-align: left;
 
@@ -147,19 +147,24 @@
 }
 
 .carousel {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 1rem;
-    row-gap: 4rem;
-    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
     &__image {
         width: auto;
         height: auto;
         max-width: 18rem;
         max-height: 7rem;
-        margin: auto auto;
+        margin: 1rem 2rem 1rem 2rem;
         object-fit: scale-down;
+        filter: grayscale(80%);
+        transition: all .2s;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
     }
 }
 /*

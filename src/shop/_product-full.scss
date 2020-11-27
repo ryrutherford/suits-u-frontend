@@ -33,9 +33,13 @@
             flex: 4;
 
             &-img {
-                height: auto;
+                height: 52rem;
                 width: auto;
+                max-width: 50vw;
                 max-height: 85vh;
+                object-fit: contain;
+                padding-left: 4rem;
+                padding-right: 4rem;
                 margin: 0 auto;
                 display: block;
             }

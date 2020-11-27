@@ -3,10 +3,12 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import {withRouter, Link} from "react-router-dom";
 import svgs from "../img/sprite.svg"
+import {useViewport} from "../common/ReactMediaQuery";
 
 const Navbar = ({history}) => {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const { width } = useViewport();
     const cookies = new Cookies()
     const userID = cookies.get("userID");
     let bag = JSON.parse(localStorage.getItem("bag"))
@@ -29,16 +31,16 @@ const Navbar = ({history}) => {
 
     return(
         <>
-            <div className="nav__menu hidden-min" onClick={(event) => {
+            {width < 932 && <div className="nav__menu" onClick={(event) => {
                 event.preventDefault();
                 setMenuOpen(!menuOpen);
             }}>
                 <div className={menuOpen ? `nav__menu-bar-1 trans` : `nav__menu-bar-1`}></div>
                 <div className={menuOpen ? `nav__menu-bar-2 trans` : `nav__menu-bar-2`}></div>
                 <div className={menuOpen ? `nav__menu-bar-3 trans` : `nav__menu-bar-3`}></div>
-            </div>
-            {menuOpen && 
-                <div className="nav__menu--popup hidden-min">
+            </div>}
+            {menuOpen && width < 932 && 
+                <div className="nav__menu--popup">
                     <ul className="product-page__ul">
                         <li className="nav__menu--li">
                             <span>
@@ -89,7 +91,7 @@ const Navbar = ({history}) => {
                 </div>
             }
             <div className="nav">
-                <div className="nav__box hidden-max">
+                { width >= 932 && <div className="nav__box">
                     <span>
                         <Link to="/shop/men" className="link">Men</Link>
                     </span>
@@ -110,11 +112,11 @@ const Navbar = ({history}) => {
                             </Link>
                         </span>
                     }
-                </div>
+                </div>}
                 <div className="nav__box nav__title">
                     <span><Link to="/" className="link">Suits U Montreal</Link></span>
                 </div>
-                <div className="nav__box hidden-max">
+                {width >= 932 && <div className="nav__box">
                     {userID && 
                         <span onClick={handleLogout}>
                             Logout
@@ -126,7 +128,7 @@ const Navbar = ({history}) => {
                     <span>
                         <Link to="/team" className="link">Team</Link>
                     </span>
-                </div>
+                </div>}
             </div>
         </>
     );
