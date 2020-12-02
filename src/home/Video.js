@@ -6,7 +6,7 @@ const Video = () => {
     return(
         <section className="section-video">
             <div className="video">
-                <video className="video__content" autoPlay muted loop>
+                <video className="video__content" autoPlay muted loop playsInline>
                     <source src={ZVideo} type="video/mp4"/>
                     Your browser is not supported
                 </video>

@@ -3,6 +3,16 @@
     padding-left: 6rem;
     padding-right: 6rem;
 
+    @include respond(tab-port){
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+
+    @include respond(phone){
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     &__summary {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr 1fr;
@@ -11,6 +21,14 @@
         row-gap: 1rem;
         width: 85%;
         margin: 0 auto;
+
+        @include respond(tab-port){
+            width: 90%;
+        }
+
+        @include respond(phone){
+            width: 95%;
+        }
 
         &-separator {
             min-width: 100%;

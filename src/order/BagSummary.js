@@ -76,10 +76,10 @@ const BagSummary = ({history, products}) => {
                         <span>{"\u21A0"}</span><span> Upon picking up your order you must show proof that you are a student (e.g. student ID, timetable).</span>
                     </div>
                     <div className="bag__summary-rules">
-                        <span>{"\u21A0"}</span><span> If for some reason you cannot pick up your order you must cancel your order within the website (on the Account page). If you also signed up for a pickup slot on Calendly, please cancel that booking as well.</span>
+                        <span>{"\u21A0"}</span><span> If you are unable to make your pickup appointment to get your order please cancel the Calendly booking 48 hours in advance and book a new appointment that works for you.</span>
                     </div>
                     <div className="bag__summary-rules">
-                        <span>{"\u21A0"}</span><span> We only accept payments in cash or through Interac e-Transfer. We do not accept credit or debit!</span>
+                        <span>{"\u21A0"}</span><span> We only accept payment through Interac e-Transfer. We do not accept credit, debit or cash!</span>
                     </div>
                     <div className="bag__summary-rules">
                         <span>{"\u21A0"}</span><span> We do not accept returns.</span>

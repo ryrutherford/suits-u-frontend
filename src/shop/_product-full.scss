@@ -29,6 +29,24 @@
             }
         }
 
+        @include respond(phone){
+            flex-direction: column;
+
+            &__info {
+                &--mobile{
+                    margin: 1.5rem auto 0 auto;
+                }
+                
+                &--align {
+                    align-self: normal;
+                }
+            }
+
+            &-row {
+                margin-top: 0.75rem;
+            }
+        }
+
         &__pics {
             flex: 4;
 
@@ -42,6 +60,12 @@
                 padding-right: 4rem;
                 margin: 0 auto;
                 display: block;
+
+                @include respond(phone){
+                    max-width: 90vw;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
             }
         }
     }
