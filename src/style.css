@@ -303,16 +303,16 @@ body {
   font-size: 3.5rem;
   max-width: 90%; }
 
-.section-video {
+.section-home-media {
   height: 65vh;
   padding-top: 6rem; }
 
-.video {
+.home-media {
   z-index: -100;
   width: 100%;
   height: 100%;
   overflow: hidden; }
-  .video__content {
+  .home-media__content {
     height: 100%;
     width: 100%;
     object-fit: cover; }

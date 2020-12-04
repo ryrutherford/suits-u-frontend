@@ -1,5 +1,5 @@
 import React from "react";
-import Video from "./Video";
+import HomeMedia from "./HomeMedia";
 import ProductCard from "../common/ProductCard";
 import Query from "../queries/Query";
 import GET_PRODUCTS from "../queries/GetProducts";
@@ -9,14 +9,14 @@ const Home = () => {
 
     return(
         <section>
-            <Video/>
+            <HomeMedia/>
             <div className="home__details">
                 Look good. Feel good.
             </div>
-            <Query query={GET_PRODUCTS} reservedBy="NONE">
+            <Query query={GET_PRODUCTS} reservedBy="NONE" limit={4}>
                 {({data: {products}}) => { return (
                     <section className="recent-products">
-                            {products.slice(0,4).map((product, i) => {
+                            {products.map((product, i) => {
                                 return (
                                     <ProductCard product={product} key={i}/>
                                 );
