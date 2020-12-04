@@ -15,7 +15,7 @@ const ShoppingBag = () => {
 
     return(
         <section className="bag">
-            <Query query={GET_PRODUCTS} reservedBy="NONE" numProducts={0} bag={bag}>
+            <Query query={GET_PRODUCTS} reservedBy="NONE" bag={bag}>
                 {({data: {products}}) => { return (
                     <BagSummary products={products}/>
                 );}}

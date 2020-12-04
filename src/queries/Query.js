@@ -1,9 +1,8 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import ProductSkeleton from "../common/ProductSkeleton";
 
 
-const Query = ({ children, query, gender, sort, categoryName, reservedBy, numProducts, id, bag, limit, start}) => {
+const Query = ({ children, query, gender, sort, categoryName, reservedBy, id, bag, limit, start}) => {
   if(gender === 'men'){
     gender = 'Men';
   }
@@ -24,9 +23,6 @@ const Query = ({ children, query, gender, sort, categoryName, reservedBy, numPro
   });
 
   if (loading){
-    if(numProducts !== 0){
-      return (<ProductSkeleton numProducts={numProducts ? numProducts : 4}/>);
-    }
     return (<></>);
   }
   if (error) {

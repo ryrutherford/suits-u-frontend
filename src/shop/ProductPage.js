@@ -121,7 +121,7 @@ const ProductPage = ({match, history}) => {
                     </div>
                 </section>
                 }
-                <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} numProducts={0} categoryName={category} limit={numProductsPerPage} start={(pageNumber - 1)*numProductsPerPage}>
+                <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} categoryName={category} limit={numProductsPerPage} start={(pageNumber - 1)*numProductsPerPage}>
                     {({data: {products}}) => { return (
                         products.length === 0 ? <span className="auth-error margin-auto">There are no products available for {gender} in the following category: {category ? category : "all categories"}</span> :
                             <section className="product-page__products">
@@ -149,7 +149,7 @@ const ProductPage = ({match, history}) => {
                         </li>
                     </ul>
                 </section>}
-                <Query query={GET_PRODUCT_COUNT} reservedBy="NONE" gender={gender} categoryName={category} numProducts={0}>
+                <Query query={GET_PRODUCT_COUNT} reservedBy="NONE" gender={gender} categoryName={category}>
                     {({data: {productsCount}}) => {
                         return (
                             <div className="product-page__pagination">

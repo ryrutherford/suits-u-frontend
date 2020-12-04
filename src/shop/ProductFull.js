@@ -7,7 +7,7 @@ const ProductFull = ({match}) => {
     const productID = match.params.id;
     return(
         <section className="product-full">
-            <Query query={GET_SINGLE_PRODUCT} reservedBy="NONE" id={productID} numProducts={0}>
+            <Query query={GET_SINGLE_PRODUCT} reservedBy="NONE" id={productID}>
                 {({data: {products}}) => { return (
                     <>
                         {products.map((product, i) => {
