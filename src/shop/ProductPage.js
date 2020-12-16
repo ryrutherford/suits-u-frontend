@@ -123,7 +123,7 @@ const ProductPage = ({match, history}) => {
                 }
                 <Query query={GET_PRODUCTS} reservedBy="NONE" gender={gender} sort={sort} categoryName={category} limit={numProductsPerPage} start={(pageNumber - 1)*numProductsPerPage}>
                     {({data: {products}}) => { return (
-                        products.length === 0 ? <span className="auth-error margin-auto">There are no products available for {gender} in the following category: {category ? category : "all categories"}</span> :
+                        products.length === 0 ? <span className={category ? `auth-error sold-out margin-auto` : `sold-out margin-auto`}>{category ? `There are no products available for ${gender} in the following category: ${category}` : `Sorry, everything is sold out! New items coming soon...`}</span> :
                             <section className="product-page__products">
                                 {products.map((product, i) => {
                                     return (

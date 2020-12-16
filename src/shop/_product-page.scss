@@ -131,3 +131,12 @@
         }
     }
 }
+
+.sold-out {
+    text-align: center;
+    font-size: 2rem;
+
+    @include respond(tab-port){
+        grid-column: 1 / -1;
+    }
+}

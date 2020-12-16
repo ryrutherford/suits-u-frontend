@@ -425,12 +425,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
+  .carousel__link {
+    margin: 1rem 2rem 1rem 2rem; }
   .carousel__image {
     width: auto;
     height: auto;
     max-width: 18rem;
     max-height: 7rem;
-    margin: 1rem 2rem 1rem 2rem;
     object-fit: scale-down;
     filter: grayscale(80%);
     transition: all .2s; }
@@ -480,7 +481,7 @@ body {
         max-width: 25rem;
         max-height: 32rem;
         object-fit: cover;
-        filter: grayscale(65%);
+        filter: grayscale(50%);
         border-radius: 5%;
         box-shadow: 0.5rem 0.5rem 1rem rgba(48, 44, 41, 0.2);
         transition: filter .2s; }
@@ -710,6 +711,13 @@ body {
         border-bottom: 0.2rem solid #3d3429; }
     .product-page__pagination--bold {
       font-family: "ProximaNovaBold"; }
+
+.sold-out {
+  text-align: center;
+  font-size: 2rem; }
+  @media (max-width: 58.1875em) {
+    .sold-out {
+      grid-column: 1 / -1; } }
 
 .product-full {
   padding-top: 8rem;
