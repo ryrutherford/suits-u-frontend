@@ -9,7 +9,6 @@ const Register = ({setCEM}) => {
     const [phone, setPhone] = useState("");
     const [error, setError] = useState("");
 
-    //TODO: change localhost so domain name
     const handleSubmit = async (event) => {
         event.preventDefault();
         axios({

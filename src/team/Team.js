@@ -94,13 +94,13 @@ const Team = () => {
             </div>
             <div className="team__members">
                 <div className="team__members-member">
-                    <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Ariane Petri"/>
-                    <h3>Ariane Petri</h3>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1609130300/suitsu/133626822_4936611079747365_8259898813830558177_n_zhtrwd.jpg" alt="Ariane Pietri"/>
+                    <h3>Ariane Pietri</h3>
                     <p>VP Logistics</p>
                     <p>U2 | BCom Finance</p>
                 </div>
                 <div className="team__members-member">
-                    <img src="https://i.pinimg.com/originals/d3/8f/f1/d38ff18e59e2da359cb5423b6ac35d24.jpg" alt="Jess Hanson"/>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1609130394/suitsu/133698197_220832249576892_5394423269881723020_n_pmqapw.jpg" alt="Jess Hanson"/>
                     <h3>Jess Hanson</h3>
                     <p>Team Member Logistics</p>
                     <p>U2 | BSc Kinesiology</p>
@@ -111,7 +111,7 @@ const Team = () => {
             </div>
             <div className="team__members">
                 <div className="team__members-member">
-                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1604027263/suitsu/123138872_359803648560364_2071865284352020965_n_tc92cv.jpg" alt="Olivia Bosa"/>
+                    <img src="https://res.cloudinary.com/dpncams2q/image/upload/v1609130473/suitsu/123138872_359803648560364_2071865284352020965_n_tc92cv.jpg" alt="Olivia Bosa"/>
                     <h3>Olivia Bosa</h3>
                     <p>VP Finance</p>
                     <p>U2 | BCom Accounting and Finance</p>

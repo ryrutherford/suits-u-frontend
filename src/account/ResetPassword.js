@@ -21,7 +21,6 @@ const ResetPassword = ({history}) => {
         return <Redirect to="/"/>
     }
 
-    //TODO: change localhost so domain name
     const handleSubmit = async (event) => {
         event.preventDefault();
         axios({

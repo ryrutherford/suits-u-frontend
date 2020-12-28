@@ -9,7 +9,6 @@ const Login = ({history, setForgotPassword}) => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     
-    //TODO: change localhost so domain name
     const handleSubmit = async (event) => {
         event.preventDefault();
         axios({
