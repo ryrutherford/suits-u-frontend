@@ -42,7 +42,7 @@ const ResetPassword = ({history}) => {
                     setError(error.response.data.data[0].messages[0].message);
                 }
                 else {
-                    console.log(error);
+                    //console.log(error);
                 }
             });      
     }

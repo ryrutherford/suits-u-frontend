@@ -23,7 +23,7 @@ const Register = ({setCEM}) => {
                 } 
             })
             .then((response) => {
-                setCEM("Account registration successful, please confirm your email before logging in");
+                setCEM("Account registration successful! Please Login Now.");
             })
             .catch((error) => {
                 // Handle error.

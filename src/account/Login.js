@@ -23,7 +23,7 @@ const Login = ({history, setForgotPassword}) => {
             .then((response) => {
                 const {id} = response.data.user;
                 const cookies = new Cookies();
-                cookies.set("userID", id, {path: '/', maxAge: 15*86400}); //set cookie for 15 days
+                cookies.set("userID", id, {path: '/', maxAge: 15*86400, domain: ".suitsumontreal.ca"}); //set cookie for 15 days
                 history.push("/");
             })
             .catch((error) => {
@@ -37,7 +37,7 @@ const Login = ({history, setForgotPassword}) => {
                     }
                 }
                 else {
-                    console.log(error);
+                    //console.log(error);
                 }
             });      
     }

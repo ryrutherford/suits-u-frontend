@@ -17,7 +17,7 @@ const ProductPage = ({match, history}) => {
     const category = match.params.category;
     const numProductsPerPage = 24;
 
-    console.log("pagenumber", pageNumber);
+    //console.log("pagenumber", pageNumber);
 
     useEffect(() => {
         //g is the gender

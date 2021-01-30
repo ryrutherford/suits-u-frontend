@@ -75,7 +75,7 @@ const ProductFullPage = ({product}) => {
                     <p className="product-card__description">{product.shortDescription}</p>
                     {sizes && <p className="product-card__size">{sizes}</p>}
                     <button className="button button--add button--black" onClick={itemInBag ? removeFromBag : addToBag}>{itemInBag ? "Remove from bag" : "Add to bag"}</button>
-                    <p className="product-full-page__info-disclaimer">All orders must be picked up in person in Montreal</p>
+                    <p className="product-full-page__info-disclaimer">All orders must be picked up in person in Montreal (shipping may be available upon request for a fee)</p>
                 </div>
             </div>
     );

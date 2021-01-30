@@ -26,7 +26,7 @@ const Query = ({ children, query, gender, sort, categoryName, reservedBy, id, ba
     return (<></>);
   }
   if (error) {
-    console.log(error);
+    //console.log(error);
     return (
       <span className="auth-error">Query Error</span>
     );

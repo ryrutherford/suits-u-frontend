@@ -15,7 +15,7 @@ const OrderSummary = ({order}) => {
                 </div>
                 <div className="order-summary__heading--col order-summary__heading--col-right">
                     <p className="order-summary__heading--date">{new Date(Date.parse(order.createdAt)).toLocaleString()}</p>
-                    <a href="https://calendly.com/ry-rutherford99/suits-u-pickup?month=2020-11" className="product-card__size link" target="_blank" rel="noopener noreferrer">Sign up for pickup slot</a>
+                    <a href="https://calendly.com/samantha-sagredo/suitsu-montreal-pick-up" className="product-card__size link" target="_blank" rel="noopener noreferrer">Sign up for pickup slot</a>
                 </div>
             </div>
             {expand === 1 && 

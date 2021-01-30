@@ -40,6 +40,7 @@ const Account = () => {
 
     return (
         <section className="account">
+            <p className="product-full-page__info-disclaimer bag__summary-disclaimer">Order confirmations may end up in your junk mail. Please add <b>shop@suitsumontreal.ca</b> to your safe sender list and check your junk mail for your Order confirmations</p>
             <h2 className="account__heading">Order History</h2>
             <span className="bag__summary-separator"></span>
             {error && <p className="product-card__size auth-error">{error}</p>}

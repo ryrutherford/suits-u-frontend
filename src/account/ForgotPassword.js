@@ -26,7 +26,7 @@ const ForgotPassword = ({setForgotPassword}) => {
                 setError(error.response.data.data[0].messages[0].message);
             }
             else {
-                console.log(error);
+                //console.log(error);
             }
         });    
     }
@@ -42,6 +42,7 @@ const ForgotPassword = ({setForgotPassword}) => {
                 <span className="auth-error">{error}</span>
                 <div className="authenticate__form-group">
                     <button className="button button--black">Submit</button>
+                    <p className="product-full-page__info-disclaimer bag__summary-disclaimer">Note: Please Check Your Junk Mail For the Reset Password Email</p>
                 </div>
             </form>
         </div>
