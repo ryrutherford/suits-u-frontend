@@ -87,7 +87,7 @@ const BagSummary = ({history, products}) => {
                         <span>{"\u21A0"}</span><span> If you are unable to make your pickup appointment to get your order please cancel the Calendly booking 48 hours in advance and book a new appointment that works for you.</span>
                     </div>
                     <div className="bag__summary-rules">
-                        <span>{"\u21A0"}</span><span> We only accept payment through Interac e-Transfer. E-transfers must be sent to president@mus.mcgill.ca with password: suitsumtl. We do not accept credit, debit or cash!</span>
+                        <span>{"\u21A0"}</span><span> We only accept payment through Interac e-Transfer. E-transfers must be sent to finance@mus.mcgill.ca with password: suitsumtl. We do not accept credit, debit or cash!</span>
                     </div>
                     <div className="bag__summary-rules">
                         <span>{"\u21A0"}</span><span> We do not accept returns.</span>
