@@ -62,7 +62,8 @@
                 display: block;
 
                 @include respond(phone){
-                    max-width: 90vw;
+                    height: auto;
+                    max-width: 70vw;
                     padding-left: 1rem;
                     padding-right: 1rem;
                 }
